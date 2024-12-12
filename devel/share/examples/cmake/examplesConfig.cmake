@@ -1,1 +1,0 @@
-/home/sirc/Scrivania/project_ws/devel/.private/examples/share/examples/cmake/examplesConfig.cmake

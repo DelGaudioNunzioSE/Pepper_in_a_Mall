@@ -1,1 +1,0 @@
-/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/rasa_ros/cmake/rasa_rosConfig-version.cmake
