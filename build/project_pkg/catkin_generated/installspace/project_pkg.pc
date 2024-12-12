@@ -1,8 +1,0 @@
-prefix=/home/sirc/Scrivania/project_ws/install
-
-Name: project_pkg
-Description: Description of project_pkg
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
