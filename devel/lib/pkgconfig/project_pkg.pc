@@ -1,0 +1,1 @@
+/home/sirc/Scrivania/project_ws/devel/.private/project_pkg/lib/pkgconfig/project_pkg.pc

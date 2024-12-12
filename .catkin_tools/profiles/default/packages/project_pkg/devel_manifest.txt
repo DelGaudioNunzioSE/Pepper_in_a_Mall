@@ -1,0 +1,5 @@
+project_pkg
+/home/sirc/Scrivania/project_ws/devel/.private/project_pkg/cmake.lock /home/sirc/Scrivania/project_ws/devel/./cmake.lock
+/home/sirc/Scrivania/project_ws/devel/.private/project_pkg/lib/pkgconfig/project_pkg.pc /home/sirc/Scrivania/project_ws/devel/lib/pkgconfig/project_pkg.pc
+/home/sirc/Scrivania/project_ws/devel/.private/project_pkg/share/project_pkg/cmake/project_pkgConfig.cmake /home/sirc/Scrivania/project_ws/devel/share/project_pkg/cmake/project_pkgConfig.cmake
+/home/sirc/Scrivania/project_ws/devel/.private/project_pkg/share/project_pkg/cmake/project_pkgConfig-version.cmake /home/sirc/Scrivania/project_ws/devel/share/project_pkg/cmake/project_pkgConfig-version.cmake

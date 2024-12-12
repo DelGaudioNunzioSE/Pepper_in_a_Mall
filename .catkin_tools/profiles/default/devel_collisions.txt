@@ -1,0 +1,1 @@
+/home/sirc/Scrivania/project_ws/devel/./cmake.lock 40

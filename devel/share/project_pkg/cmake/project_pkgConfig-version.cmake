@@ -1,0 +1,1 @@
+/home/sirc/Scrivania/project_ws/devel/.private/project_pkg/share/project_pkg/cmake/project_pkgConfig-version.cmake
