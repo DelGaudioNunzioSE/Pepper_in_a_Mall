@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Dialogue.lisp"
+  "/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Text2Speech.lisp"
   "CMakeFiles/rasa_ros_generate_messages_lisp"
 )
 

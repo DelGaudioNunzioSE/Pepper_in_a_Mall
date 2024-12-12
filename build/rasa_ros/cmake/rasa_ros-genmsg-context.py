@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv"
+services_str = "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv;/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv"
 pkg_name = "rasa_ros"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

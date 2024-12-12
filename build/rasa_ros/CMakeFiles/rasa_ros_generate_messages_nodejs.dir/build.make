@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/sirc/Scrivania/project_ws/build/rasa_ros
 include CMakeFiles/rasa_ros_generate_messages_nodejs.dir/progress.make
 
 CMakeFiles/rasa_ros_generate_messages_nodejs: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js
+CMakeFiles/rasa_ros_generate_messages_nodejs: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js
 
 
 /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
@@ -61,8 +62,14 @@ CMakeFiles/rasa_ros_generate_messages_nodejs: /home/sirc/Scrivania/project_ws/de
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from rasa_ros/Dialogue.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
 
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js: /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from rasa_ros/Text2Speech.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv
+
 rasa_ros_generate_messages_nodejs: CMakeFiles/rasa_ros_generate_messages_nodejs
 rasa_ros_generate_messages_nodejs: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js
+rasa_ros_generate_messages_nodejs: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js
 rasa_ros_generate_messages_nodejs: CMakeFiles/rasa_ros_generate_messages_nodejs.dir/build.make
 
 .PHONY : rasa_ros_generate_messages_nodejs

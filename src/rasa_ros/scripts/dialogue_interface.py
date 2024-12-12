@@ -3,7 +3,7 @@
 import rospy
 from rasa_ros.srv import Dialogue, DialogueResponse
 from std_msgs.msg import Int16MultiArray, String
-from cogrob_pepper_nodes import Text2Speech, Text2SpeechRequest, Text2SpeechResponse
+from rasa_ros.srv import Text2Speech, Text2SpeechRequest, Text2SpeechResponse
 
 
 
@@ -38,10 +38,10 @@ def callback(message):
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
 
-def call(self, text: str):
+def call(text):
         msg = Text2SpeechRequest()
         msg.speech = text
-        resp = self.tts(text) #chiama "say()"
+        resp = tts(text) #chiama "say()"
         rospy.loginfo(resp.ack)
 
 def main():

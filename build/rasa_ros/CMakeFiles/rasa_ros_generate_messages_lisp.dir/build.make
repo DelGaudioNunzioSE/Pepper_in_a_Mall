@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/sirc/Scrivania/project_ws/build/rasa_ros
 include CMakeFiles/rasa_ros_generate_messages_lisp.dir/progress.make
 
 CMakeFiles/rasa_ros_generate_messages_lisp: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Dialogue.lisp
+CMakeFiles/rasa_ros_generate_messages_lisp: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Text2Speech.lisp
 
 
 /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Dialogue.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
@@ -61,8 +62,14 @@ CMakeFiles/rasa_ros_generate_messages_lisp: /home/sirc/Scrivania/project_ws/deve
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from rasa_ros/Dialogue.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv
 
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Text2Speech.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Text2Speech.lisp: /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from rasa_ros/Text2Speech.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv
+
 rasa_ros_generate_messages_lisp: CMakeFiles/rasa_ros_generate_messages_lisp
 rasa_ros_generate_messages_lisp: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Dialogue.lisp
+rasa_ros_generate_messages_lisp: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/common-lisp/ros/rasa_ros/srv/Text2Speech.lisp
 rasa_ros_generate_messages_lisp: CMakeFiles/rasa_ros_generate_messages_lisp.dir/build.make
 
 .PHONY : rasa_ros_generate_messages_lisp

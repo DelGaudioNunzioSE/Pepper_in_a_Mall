@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/sirc/Scrivania/project_ws/build/rasa_ros
 include CMakeFiles/rasa_ros_generate_messages_cpp.dir/progress.make
 
 CMakeFiles/rasa_ros_generate_messages_cpp: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h
+CMakeFiles/rasa_ros_generate_messages_cpp: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h
 
 
 /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -63,8 +64,16 @@ CMakeFiles/rasa_ros_generate_messages_cpp: /home/sirc/Scrivania/project_ws/devel
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from rasa_ros/Dialogue.srv"
 	cd /home/sirc/Scrivania/project_ws/src/rasa_ros && /home/sirc/Scrivania/project_ws/build/rasa_ros/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h: /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from rasa_ros/Text2Speech.srv"
+	cd /home/sirc/Scrivania/project_ws/src/rasa_ros && /home/sirc/Scrivania/project_ws/build/rasa_ros/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros -e /opt/ros/noetic/share/gencpp/cmake/..
+
 rasa_ros_generate_messages_cpp: CMakeFiles/rasa_ros_generate_messages_cpp
 rasa_ros_generate_messages_cpp: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Dialogue.h
+rasa_ros_generate_messages_cpp: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/include/rasa_ros/Text2Speech.h
 rasa_ros_generate_messages_cpp: CMakeFiles/rasa_ros_generate_messages_cpp.dir/build.make
 
 .PHONY : rasa_ros_generate_messages_cpp

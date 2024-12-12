@@ -1,53 +1,53 @@
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/Rest.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/ExecuteJSRequest.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/LoadUrlRequest.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/RestRequest.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/LoadUrlResponse.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/ExecuteJSResponse.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/ExecuteJS.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/Text2SpeechResponse.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/RestResponse.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/WakeUpResponse.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/WakeUpRequest.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/Text2Speech.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/WakeUp.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/LoadUrl.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/Text2SpeechRequest.h
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/__init__.py
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_LoadUrl.py
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_ExecuteJS.py
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/__init__.py
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_WakeUp.py
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Text2Speech.py
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Rest.py
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/libs/__init__.py
-Symlinking /home/sirc/Scrivania/project_ws/devel/lib/pkgconfig/pepper_nodes.pc
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-paths.cmake
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig.cmake
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-extras.cmake
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig-version.cmake
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/manifest.l
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/LoadUrl.l
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/Rest.l
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/Text2Speech.l
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/ExecuteJS.l
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/WakeUp.l
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/_index.js
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Rest.js
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/ExecuteJS.js
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/_index.js
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/LoadUrl.js
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/WakeUp.js
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Rest.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_LoadUrl.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_ExecuteJS.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_WakeUp.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Text2Speech.lisp
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/pepper_nodes-srv.asd
-Symlinking /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/Rest.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/Rest.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJSRequest.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/ExecuteJSRequest.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrlRequest.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/LoadUrlRequest.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/RestRequest.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/RestRequest.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrlResponse.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/LoadUrlResponse.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJSResponse.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/ExecuteJSResponse.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/ExecuteJS.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/ExecuteJS.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2SpeechResponse.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/Text2SpeechResponse.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/RestResponse.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/RestResponse.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUpResponse.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/WakeUpResponse.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUpRequest.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/WakeUpRequest.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2Speech.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/Text2Speech.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/WakeUp.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/WakeUp.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/LoadUrl.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/LoadUrl.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/include/pepper_nodes/Text2SpeechRequest.h, /home/sirc/Scrivania/project_ws/devel/include/pepper_nodes/Text2SpeechRequest.h)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/__init__.py, /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/__init__.py)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_LoadUrl.py, /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_LoadUrl.py)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_ExecuteJS.py, /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_ExecuteJS.py)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/__init__.py, /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/__init__.py)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_WakeUp.py, /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_WakeUp.py)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_Text2Speech.py, /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Text2Speech.py)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/_Rest.py, /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/pepper_nodes/srv/_Rest.py)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/libs/__init__.py, /home/sirc/Scrivania/project_ws/devel/lib/python3/dist-packages/libs/__init__.py)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/pkgconfig/pepper_nodes.pc, /home/sirc/Scrivania/project_ws/devel/lib/pkgconfig/pepper_nodes.pc)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodes-msg-paths.cmake, /home/sirc/Scrivania/project_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-paths.cmake)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodesConfig.cmake, /home/sirc/Scrivania/project_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig.cmake)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodes-msg-extras.cmake, /home/sirc/Scrivania/project_ws/devel/share/pepper_nodes/cmake/pepper_nodes-msg-extras.cmake)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/pepper_nodes/cmake/pepper_nodesConfig-version.cmake, /home/sirc/Scrivania/project_ws/devel/share/pepper_nodes/cmake/pepper_nodesConfig-version.cmake)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/manifest.l, /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/manifest.l)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/LoadUrl.l, /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/LoadUrl.l)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/Rest.l, /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/Rest.l)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/Text2Speech.l, /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/Text2Speech.l)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/ExecuteJS.l, /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/ExecuteJS.l)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/WakeUp.l, /home/sirc/Scrivania/project_ws/devel/share/roseus/ros/pepper_nodes/srv/WakeUp.l)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/_index.js, /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/_index.js)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js, /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Text2Speech.js)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/Rest.js, /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/Rest.js)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/ExecuteJS.js, /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/ExecuteJS.js)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/_index.js, /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/_index.js)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/LoadUrl.js, /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/LoadUrl.js)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/gennodejs/ros/pepper_nodes/srv/WakeUp.js, /home/sirc/Scrivania/project_ws/devel/share/gennodejs/ros/pepper_nodes/srv/WakeUp.js)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/WakeUp.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_Rest.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Rest.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_LoadUrl.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_LoadUrl.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/ExecuteJS.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Rest.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_ExecuteJS.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_ExecuteJS.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/Text2Speech.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_WakeUp.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_WakeUp.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/_package_Text2Speech.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/_package_Text2Speech.lisp)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/pepper_nodes-srv.asd, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/pepper_nodes-srv.asd)
+Linked: (/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp, /home/sirc/Scrivania/project_ws/devel/share/common-lisp/ros/pepper_nodes/srv/LoadUrl.lisp)

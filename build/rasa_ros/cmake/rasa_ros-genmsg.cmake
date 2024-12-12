@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "rasa_ros: 0 messages, 1 services")
+message(STATUS "rasa_ros: 0 messages, 2 services")
 
 set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
 
@@ -22,6 +22,11 @@ add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv" ""
 )
 
+get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rasa_ros" "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv" ""
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -32,6 +37,12 @@ add_custom_target(_rasa_ros_generate_messages_check_deps_${_filename}
 ### Generating Services
 _generate_srv_cpp(rasa_ros
   "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
+)
+_generate_srv_cpp(rasa_ros
+  "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rasa_ros
@@ -51,6 +62,8 @@ add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_cpp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+add_dependencies(rasa_ros_generate_messages_cpp _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(rasa_ros_gencpp)
@@ -65,6 +78,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_cpp)
 ### Generating Services
 _generate_srv_eus(rasa_ros
   "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
+)
+_generate_srv_eus(rasa_ros
+  "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rasa_ros
@@ -84,6 +103,8 @@ add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_eus)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+add_dependencies(rasa_ros_generate_messages_eus _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(rasa_ros_geneus)
@@ -98,6 +119,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_eus)
 ### Generating Services
 _generate_srv_lisp(rasa_ros
   "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
+)
+_generate_srv_lisp(rasa_ros
+  "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rasa_ros
@@ -117,6 +144,8 @@ add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_lisp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+add_dependencies(rasa_ros_generate_messages_lisp _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(rasa_ros_genlisp)
@@ -131,6 +160,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rasa_ros_generate_messages_lisp)
 ### Generating Services
 _generate_srv_nodejs(rasa_ros
   "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
+)
+_generate_srv_nodejs(rasa_ros
+  "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rasa_ros
@@ -150,6 +185,8 @@ add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_nodejs)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
+add_dependencies(rasa_ros_generate_messages_nodejs _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(rasa_ros_gennodejs)
@@ -168,6 +205,12 @@ _generate_srv_py(rasa_ros
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
 )
+_generate_srv_py(rasa_ros
+  "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rasa_ros
+)
 
 ### Generating Module File
 _generate_module_py(rasa_ros
@@ -182,6 +225,8 @@ add_dependencies(rasa_ros_generate_messages rasa_ros_generate_messages_py)
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv" NAME_WE)
+add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv" NAME_WE)
 add_dependencies(rasa_ros_generate_messages_py _rasa_ros_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

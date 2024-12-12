@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/sirc/Scrivania/project_ws/build/rasa_ros
 include CMakeFiles/rasa_ros_generate_messages_py.dir/progress.make
 
 CMakeFiles/rasa_ros_generate_messages_py: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
+CMakeFiles/rasa_ros_generate_messages_py: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Text2Speech.py
 CMakeFiles/rasa_ros_generate_messages_py: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py
 
 
@@ -62,13 +63,20 @@ CMakeFiles/rasa_ros_generate_messages_py: /home/sirc/Scrivania/project_ws/devel/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV rasa_ros/Dialogue"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv
 
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Text2Speech.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Text2Speech.py: /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV rasa_ros/Text2Speech"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv
+
 /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for rasa_ros"
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Text2Speech.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for rasa_ros"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv --initpy
 
 rasa_ros_generate_messages_py: CMakeFiles/rasa_ros_generate_messages_py
 rasa_ros_generate_messages_py: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Dialogue.py
+rasa_ros_generate_messages_py: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/_Text2Speech.py
 rasa_ros_generate_messages_py: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/lib/python3/dist-packages/rasa_ros/srv/__init__.py
 rasa_ros_generate_messages_py: CMakeFiles/rasa_ros_generate_messages_py.dir/build.make
 

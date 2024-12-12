@@ -1,12 +1,20 @@
-[  0%] Built target _rasa_ros_generate_messages_check_deps_Dialogue
+[35m[1mScanning dependencies of target _rasa_ros_generate_messages_check_deps_Text2Speech[0m
 [  0%] Built target std_msgs_generate_messages_py
-[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _rasa_ros_generate_messages_check_deps_Text2Speech
+[  0%] Built target _rasa_ros_generate_messages_check_deps_Dialogue
 [  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_lisp
 [  0%] Built target std_msgs_generate_messages_cpp
-[  0%] Built target std_msgs_generate_messages_eus
-[ 28%] Built target rasa_ros_generate_messages_py
-[ 42%] Built target rasa_ros_generate_messages_lisp
-[ 57%] Built target rasa_ros_generate_messages_nodejs
-[ 71%] Built target rasa_ros_generate_messages_cpp
-[100%] Built target rasa_ros_generate_messages_eus
+[  8%] [34m[1mGenerating Python code from SRV rasa_ros/Text2Speech[0m
+[  8%] Built target std_msgs_generate_messages_eus
+[ 16%] [34m[1mGenerating Lisp code from rasa_ros/Text2Speech.srv[0m
+[ 25%] Built target rasa_ros_generate_messages_lisp
+[ 33%] [34m[1mGenerating Javascript code from rasa_ros/Text2Speech.srv[0m
+[ 41%] [34m[1mGenerating Python srv __init__.py for rasa_ros[0m
+[ 50%] [34m[1mGenerating C++ code from rasa_ros/Text2Speech.srv[0m
+[ 58%] Built target rasa_ros_generate_messages_nodejs
+[ 66%] [34m[1mGenerating EusLisp code from rasa_ros/Text2Speech.srv[0m
+[ 83%] Built target rasa_ros_generate_messages_eus
+[ 91%] Built target rasa_ros_generate_messages_cpp
+[100%] Built target rasa_ros_generate_messages_py
 [100%] Built target rasa_ros_generate_messages

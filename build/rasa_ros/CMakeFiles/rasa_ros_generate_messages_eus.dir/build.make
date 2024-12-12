@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/sirc/Scrivania/project_ws/build/rasa_ros
 include CMakeFiles/rasa_ros_generate_messages_eus.dir/progress.make
 
 CMakeFiles/rasa_ros_generate_messages_eus: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l
+CMakeFiles/rasa_ros_generate_messages_eus: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l
 CMakeFiles/rasa_ros_generate_messages_eus: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
 
 
@@ -62,12 +63,18 @@ CMakeFiles/rasa_ros_generate_messages_eus: /home/sirc/Scrivania/project_ws/devel
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from rasa_ros/Dialogue.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
 
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l: /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from rasa_ros/Text2Speech.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rasa_ros -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv
+
 /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for rasa_ros"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sirc/Scrivania/project_ws/build/rasa_ros/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for rasa_ros"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros rasa_ros std_msgs
 
 rasa_ros_generate_messages_eus: CMakeFiles/rasa_ros_generate_messages_eus
 rasa_ros_generate_messages_eus: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Dialogue.l
+rasa_ros_generate_messages_eus: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/srv/Text2Speech.l
 rasa_ros_generate_messages_eus: /home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/roseus/ros/rasa_ros/manifest.l
 rasa_ros_generate_messages_eus: CMakeFiles/rasa_ros_generate_messages_eus.dir/build.make
 

@@ -129,7 +129,10 @@ file(INSTALL DESTINATION "/home/sirc/Scrivania/project_ws/install" TYPE FILE FIL
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/srv" TYPE FILE FILES "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rasa_ros/srv" TYPE FILE FILES
+    "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Dialogue.srv"
+    "/home/sirc/Scrivania/project_ws/src/rasa_ros/srv/Text2Speech.srv"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

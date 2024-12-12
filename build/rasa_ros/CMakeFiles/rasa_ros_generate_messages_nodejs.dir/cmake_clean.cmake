@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Dialogue.js"
+  "/home/sirc/Scrivania/project_ws/devel/.private/rasa_ros/share/gennodejs/ros/rasa_ros/srv/Text2Speech.js"
   "CMakeFiles/rasa_ros_generate_messages_nodejs"
 )
 
