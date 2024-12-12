@@ -1,0 +1,1 @@
+/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/share/roseus/ros/pepper_nodes/srv/WakeUp.l

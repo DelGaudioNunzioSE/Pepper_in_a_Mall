@@ -3,6 +3,7 @@
 import rospy
 from rasa_ros.srv import Dialogue, DialogueResponse
 from std_msgs.msg import Int16MultiArray, String
+from cogrob_pepper_nodes import Text2Speech, Text2SpeechRequest, Text2SpeechResponse
 
 
 
@@ -23,6 +24,7 @@ class TerminalInterface:
         print("[OUT]:",text)
 
 dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
+tts = rospy.ServiceProxy("/tts", Text2Speech)
 terminal = TerminalInterface()
 
 def callback(message):
@@ -32,8 +34,15 @@ def callback(message):
         print("[IN]:", message)
         bot_answer = dialogue_service(message) #chiama il service dando in input il messaggio
         terminal.set_text(bot_answer.answer) #restituisce la risposta e lo stampa sulla shell
+        call(bot_answer.answer)
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
+
+def call(self, text: str):
+        msg = Text2SpeechRequest()
+        msg.speech = text
+        resp = self.tts(text) #chiama "say()"
+        rospy.loginfo(resp.ack)
 
 def main():
     rospy.init_node('writing')

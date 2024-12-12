@@ -1,0 +1,2 @@
+set(pepper_nodes_MESSAGE_FILES "")
+set(pepper_nodes_SERVICE_FILES "/home/sirc/Scrivania/project_ws/src/cogrob_pepper_nodes/src/pepper_nodes/srv/ExecuteJS.srv;/home/sirc/Scrivania/project_ws/src/cogrob_pepper_nodes/src/pepper_nodes/srv/LoadUrl.srv;/home/sirc/Scrivania/project_ws/src/cogrob_pepper_nodes/src/pepper_nodes/srv/Rest.srv;/home/sirc/Scrivania/project_ws/src/cogrob_pepper_nodes/src/pepper_nodes/srv/Text2Speech.srv;/home/sirc/Scrivania/project_ws/src/cogrob_pepper_nodes/src/pepper_nodes/srv/WakeUp.srv")

@@ -1,0 +1,1 @@
+/home/sirc/Scrivania/project_ws/devel/.private/pepper_nodes/lib/python3/dist-packages/pepper_nodes/srv/__init__.py
