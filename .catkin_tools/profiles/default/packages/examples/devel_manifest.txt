@@ -1,5 +1,0 @@
-cogrob_pepper_nodes/src/examples
-/home/sirc/Scrivania/project_ws/devel/.private/examples/cmake.lock /home/sirc/Scrivania/project_ws/devel/./cmake.lock
-/home/sirc/Scrivania/project_ws/devel/.private/examples/lib/pkgconfig/examples.pc /home/sirc/Scrivania/project_ws/devel/lib/pkgconfig/examples.pc
-/home/sirc/Scrivania/project_ws/devel/.private/examples/share/examples/cmake/examplesConfig.cmake /home/sirc/Scrivania/project_ws/devel/share/examples/cmake/examplesConfig.cmake
-/home/sirc/Scrivania/project_ws/devel/.private/examples/share/examples/cmake/examplesConfig-version.cmake /home/sirc/Scrivania/project_ws/devel/share/examples/cmake/examplesConfig-version.cmake
