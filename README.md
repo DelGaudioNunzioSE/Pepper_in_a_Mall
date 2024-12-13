@@ -7,3 +7,7 @@ Welcome to the repository for our **Cognitive Robotics** project! The goal of th
 Pepper will be designed to:
 - Interact with humans in a natural way 🧑🤝🤖
 - Answer questions based on information stored in its internal database 📂❓
+
+
+
+![Alt text](https://corporate-internal-prod.aldebaran.com/themes/custom/softbank/images/360/pepper.png)
