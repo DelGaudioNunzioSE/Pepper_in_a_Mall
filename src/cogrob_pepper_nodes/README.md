@@ -1,0 +1,1 @@
+This folder come from an other repository: https://github.com/gdesimone97/cogrob_pepper_nodes.git
