@@ -15,24 +15,23 @@ https://drive.google.com/file/d/19wCRNv_ymXgmMfKGK9Tvin_8Sar2cbpH/view?usp=shari
 # HOW TO 🧑‍🏫
 
 ## HOW TO RUN
+
 ### Activate Pepper nodes
 1. connect on the same pepper's net
 2. roslaunch pepper_nodes pepper_bringup.launch nao_ip:=x.x.x.x
 
 
 ## HOW TO INSTALL
-### Installing catkin
-1. sudo-apt-install python3-catkin-tools
-2. sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-
-wstool build-essential ros-melodic-catkin python-catkin-tools
+### Preparation
+1. sudo apt update
+2. sudo apt install python3-pip
 
 ### Installing ROS
 #### Setup sources.list and keys
 1. sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-2. sudo apt install curl # if you haven't already installed curl curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc |
-3. sudo apt-key add -
+2. sudo apt install curl 
+3. curl curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 #### Installation and environment setup
-1. sudo apt update
 2. sudo apt install ros-noetic-desktop-full
 3. source /opt/ros/noetic/setup.bash
 4. echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc source ~/.bashrc
@@ -41,11 +40,16 @@ wstool build-essential ros-melodic-catkin python-catkin-tools
 2. sudo apt install python3-rosdep
 3. sudo rosdep init
 4. rosdep update
-5. sudo apt-get install ros-noetic-catkin python-catkin-tools
+5. sudo apt install ros-noetic-catkin
+
+
+### Installing catkin
+1. sudo-apt-install python3-catkin-tools
+2. sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+
 
 ### Installing Rasa 
-1. sudo apt update
-2. sudo apt install python3-pip
+
 3. pip3 install pip
 4. pip3 install rasa
 5. pip3 install rasa\[spacy\]
