@@ -16,7 +16,25 @@ https://drive.google.com/file/d/19wCRNv_ymXgmMfKGK9Tvin_8Sar2cbpH/view?usp=shari
 
 ## HOW TO RUN
 
-### Activate Pepper nodes
+### First build
+1. cd project_ws
+- rm -rf build
+- rm -rf devel
+- rm -rf install
+- rm -rf .catkin_workspace
+2. catkin init
+3. catkin build
+4. source devel/setup.bash
+
+### Re-build
+1. catkin build
+2. source devel/setup.bash
+
+### Run nodes
+1. roscore
+2. rosrun package_name node_name
+
+### Run nodes on Pepper
 1. connect on the same pepper's net
 2. roslaunch pepper_nodes pepper_bringup.launch nao_ip:=x.x.x.x
 
