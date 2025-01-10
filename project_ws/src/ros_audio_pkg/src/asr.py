@@ -30,7 +30,7 @@ def callback(audio):
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 def listener():
-    rospy.Subscriber("mic_data", Int16MultiArray, callback)
+    rospy.Subscriber("mic_data", Int16MultiArray, callback) #il publisher è voice_detection
 
     rospy.spin()
 
