@@ -19,7 +19,7 @@ class DialogueInterface:
     '''
 
     def __init__(self):
-        #self.tts = rospy.ServiceProxy("/tts", Text2Speech) In questo modo accoppio il service e l'interfaccia
+        #self.tts = rospy.ServiceProxy("/tts", Text2Speech) #In questo modo accoppio il service e l'interfaccia
         #decido di fare un publisher in modo che la risposta di rasa possa essere usata da 
         #tutti i nodi di Pepper singolarmente, senza dover essere inseriti in questo package.
         self.dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
@@ -38,7 +38,7 @@ class DialogueInterface:
             print("[IN]:", message)
             bot_answer = self.dialogue_service(message) #chiama il service dando in input il messaggio
             self.set_text(bot_answer.answer) #restituisce la risposta e lo stampa sulla shell
-            self.pub.publish(bot_answer.answer)
+            self.pub.publish(bot_answer.answer) #chiama il nodo tts e fa parlare
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)
 
@@ -48,7 +48,7 @@ def main():
     interface = DialogueInterface()
     rospy.init_node('writing')
     rospy.Subscriber("voice_txt", String, interface.callback)
-    #interface.pub.publish("Hello! How can i help you?") #da sbloccare con Pepper
+    interface.pub.publish("Hello! How can i help you?") #da sbloccare con Pepper
     interface.set_text("Hello! How can i help you?")
     rospy.spin()
 

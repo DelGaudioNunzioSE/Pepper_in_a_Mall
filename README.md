@@ -1,20 +1,25 @@
 # Pepper as a Social Robot 🗣️
 
-## Documentation
-- https://miro.com/app/board/uXjVL3zb4J8=/?share_link_id=32917356308
-
 ## About this Repository
+https://drive.google.com/file/d/19wCRNv_ymXgmMfKGK9Tvin_8Sar2cbpH/view?usp=sharing
 
-Welcome to the repository for our **Cognitive Robotics** project! The goal of this project is to develop a **social robot** using **Pepper**, controlled via **ROS** (Robot Operating System).
 
-Pepper will be designed to:
-- Interact with humans in a natural way 🧑🤝🤖
-- Answer questions based on information stored in its internal database 📂❓
+## Documentation
+- https://miro.com/welcomeonboard/UGMxOGxGc2tTM2pNTGxyR0pwM2lvbWdUK09rOVVuWDV1RHJzdXgvOW1LUVl0U3IwQ2RJTHN4U2k3eVc0T3F1UCtWM2xzdFdKTVRFc0NuQWt1TDZKbjI5Sk1nQkVxWktORUxORlIydW44aUtYNTkyeVczcFZ0ZzVIbDJDaWdRM0chZQ==?share_link_id=50079255558
+- https://docs.google.com/presentation/d/1JYzQBD96atpWQA0Y7HPhwsb9_5LvQWf62hsoy5_mC5I/edit?usp=sharing
+- https://www.overleaf.com/6169424213fhykbqjpvwqw#0c1b76
 
 
 
 
 # HOW TO 🧑‍🏫
+
+## HOW TO RUN
+### Activate Pepper nodes
+1. connect on the same pepper's net
+2. roslaunch pepper_nodes pepper_bringup.launch nao_ip:=x.x.x.x
+
+
 ## HOW TO INSTALL
 ### Installing catkin
 1. sudo-apt-install python3-catkin-tools
@@ -64,13 +69,6 @@ wstool build-essential ros-melodic-catkin python-catkin-tools
 5. cd $HOME/catkin_ws
 6. catkin build
 7. source devel/setup.bash
-
-
-
-## HOW TO RUN
-### Activate Pepper nodes
-1. connect on the same pepper's net
-2. roslaunch pepper_nodes pepper_bringup.launch nao_ip:=x.x.x.x
 
 
 

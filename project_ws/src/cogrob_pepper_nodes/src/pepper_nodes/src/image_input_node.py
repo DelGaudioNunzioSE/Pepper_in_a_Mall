@@ -50,7 +50,7 @@ class ImageInputNode:
         self.rgb_sub = self.camera.subscribeCamera("RGB Stream", rgb_camera, resolution, COLORSPACE_RGB, self.fps) #https://bit.ly/3BEFZIr
         if not self.rgb_sub:
             raise Exception("Camera is not initialized properly")
-        self.image_publisher = rospy.Publisher('in_rgb', Image, queue_size=1)
+        self.image_publisher = rospy.Publisher('in_rgb', Image, queue_size=1) #pubblica in_rgb
         self.bridge = CvBridge()
     
     '''
@@ -94,7 +94,7 @@ class ImageInputNode:
 
 if __name__ == "__main__":
     parser = OptionParser()
-    parser.add_option("--ip", dest="ip", default="10.0.1.207")
+    parser.add_option("--ip", dest="ip", default="10.0.1.207") #CAMBIARE ID PEPPER
     parser.add_option("--port", dest="port", default=9559)
     (options, args) = parser.parse_args()
     try:
