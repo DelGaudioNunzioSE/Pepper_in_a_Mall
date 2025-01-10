@@ -1,7 +1,7 @@
 # Pepper as a Social Robot 🗣️
 
 ## Documentation
-- https://miro.com/welcomeonboard/UGMxOGxGc2tTM2pNTGxyR0pwM2lvbWdUK09rOVVuWDV1RHJzdXgvOW1LUVl0U3IwQ2RJTHN4U2k3eVc0T3F1UCtWM2xzdFdKTVRFc0NuQWt1TDZKbjI5Sk1nQkVxWktORUxORlIydW44aUtYNTkyeVczcFZ0ZzVIbDJDaWdRM0chZQ==?share_link_id=50079255558
+- https://miro.com/app/board/uXjVL3zb4J8=/?share_link_id=32917356308
 
 ## About this Repository
 
