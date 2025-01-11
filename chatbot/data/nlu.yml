@@ -158,6 +158,8 @@ nlu:
     - Show me the contents of group [five](group)
     - What are the parts of group [six](group)?
     - Explain the composition of group [seven](group)
+    - What are the members of this group?
+    - What about this group?
 
 - intent: info_ranking
   examples: |

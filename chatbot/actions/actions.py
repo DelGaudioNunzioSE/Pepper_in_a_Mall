@@ -97,13 +97,13 @@ class CompositionGroups(Action):
                 headers = next(reader)  # Legge l'intestazione del file CSV
 
                 
-                group_number = int(self.word_to_number(group_number))
-                if group_number == -1:
-                    dispatcher.utter_message(text="Sorry, i didn't understan. Can you repeat please?") #specificare corretta posizione
+                group_number = int(group_number)
+                if group_number == None:
+                    dispatcher.utter_message(text="Sorry, i didn't understand. Can you repeat please?") #specificare corretta posizione
                     return []
 
                 # Cerca la riga corrispondente al numero del gruppo
-                dispatcher.utter_message(text=f"Let me look...")
+                dispatcher.utter_message(text=f"Let me check...")
                 for i, row in enumerate(reader, start=2):  # Inizia da 2 per saltare l'intestazione
                     if i == group_number+1: #perchè salta l'intestazione
 
@@ -262,8 +262,8 @@ class ActionGroupRank(Action):
                     
         # Posizione di un gruppo generico
         if group_number is not None and score == None:
-            group_number = int(self.word_to_number(group_number))
-            if group_number == -1:
+            group_number = int(group_number)
+            if group_number == None:
                 dispatcher.utter_message(text=f"Sorry, can you repeat? I didn't understand the group number..")
                 return []
 
@@ -274,12 +274,13 @@ class ActionGroupRank(Action):
                     if int(row[0]) == group_number:
                         dispatcher.utter_message(self.summary_group(row,i))
                         return []
-                dispatcher.utter_message(text=f"The group {group_number} wasn't in the contest!")
+                dispatcher.utter_message(text=f"The group {group_number} wasn't in the contest")
+                return []
 
         # Punteggi di un gruppo generico
         elif group_number is not None and score is not None:
-            group_number = int(self.word_to_number(group_number))
-            if group_number == -1:
+            group_number = int(group_number)
+            if group_number == None:
                 dispatcher.utter_message(text=f"Sorry, can you repeat? I didn't understand the group number..")
                 return []
 
@@ -293,11 +294,12 @@ class ActionGroupRank(Action):
                         sc = self.detect_score(row,score)
                         #se non è scritta in questo modo gli dò il risultato generale
                         if sc == -1:
-                            dispatcher.utter_message("I'm not sure if I understood, but let me check...")
-                            dispatcher.utter_message(self.summary_group(row,i))
+                            dispatcher.utter_message(f"I'm not sure if I understood, but let me check... {self.summary_group(row,i)}")
                             return []
                         dispatcher.utter_message(text=f"The group:{row[0]} {score} is {sc}")
                         return []
-                    
+                dispatcher.utter_message(text=f"The group {group_number} wasn't in the competition")
+                return[]
+                
         dispatcher.utter_message(text=f"Sorry, I was not payng attention, can you repeat?")  
         return[]
