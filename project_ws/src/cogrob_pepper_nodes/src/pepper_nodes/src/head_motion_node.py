@@ -24,10 +24,10 @@ class HeadMotionNode:
     '''
     def head_yaw(self, msg):
         try:
-            self.motion_proxy.setAngles(["HeadYaw"], [msg.data[0]], msg.data[1])
+            self.motion_proxy.setAngles(["HeadYaw"], [msg.data[0]])
         except:
             self.motion_proxy = self.motion_proxy = self.session.get_service("ALMotion")
-            self.motion_proxy.setAngles(["HeadYaw"], [msg.data[0]], msg.data[1])
+            self.motion_proxy.setAngles(["HeadYaw"], [msg.data[0]])
     
     '''
     This method calls the ALMotion service to move the robot head relative to the pitch angle
@@ -37,7 +37,7 @@ class HeadMotionNode:
             self.motion_proxy.setAngles(["HeadPitch"], [msg.data[0]], msg.data[1])
         except:
             self.motion_proxy = self.motion_proxy = self.session.get_service("ALMotion")
-            self.motion_proxy.setAngles(["HeadPitch"], [msg.data[0]], msg.data[1])
+            self.motion_proxy.setAngles(["HeadPitch"], [msg.data[0], msg.data[1]])
             
     '''
     This method starts the node and subscribes it to the topics
