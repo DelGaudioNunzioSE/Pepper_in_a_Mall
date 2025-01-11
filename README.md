@@ -1,33 +1,55 @@
 # Pepper as a Social Robot 🗣️
 
+## About this Repository
+https://drive.google.com/file/d/19wCRNv_ymXgmMfKGK9Tvin_8Sar2cbpH/view?usp=sharing
+
+
 ## Documentation
 - https://miro.com/welcomeonboard/UGMxOGxGc2tTM2pNTGxyR0pwM2lvbWdUK09rOVVuWDV1RHJzdXgvOW1LUVl0U3IwQ2RJTHN4U2k3eVc0T3F1UCtWM2xzdFdKTVRFc0NuQWt1TDZKbjI5Sk1nQkVxWktORUxORlIydW44aUtYNTkyeVczcFZ0ZzVIbDJDaWdRM0chZQ==?share_link_id=50079255558
-
-## About this Repository
-
-Welcome to the repository for our **Cognitive Robotics** project! The goal of this project is to develop a **social robot** using **Pepper**, controlled via **ROS** (Robot Operating System).
-
-Pepper will be designed to:
-- Interact with humans in a natural way 🧑🤝🤖
-- Answer questions based on information stored in its internal database 📂❓
+- https://docs.google.com/presentation/d/1JYzQBD96atpWQA0Y7HPhwsb9_5LvQWf62hsoy5_mC5I/edit?usp=sharing
+- https://www.overleaf.com/6169424213fhykbqjpvwqw#0c1b76
 
 
 
 
 # HOW TO 🧑‍🏫
+
+## HOW TO RUN
+
+### First build
+1. cd project_ws
+- rm -rf build
+- rm -rf devel
+- rm -rf install
+- rm -rf .catkin_workspace
+2. catkin init
+3. catkin build
+4. source devel/setup.bash
+
+### Re-build
+1. catkin build
+2. source devel/setup.bash
+
+### Run nodes
+1. roscore
+2. rosrun package_name node_name
+
+### Run nodes on Pepper
+1. connect on the same pepper's net
+2. roslaunch pepper_nodes pepper_bringup.launch nao_ip:=x.x.x.x
+
+
 ## HOW TO INSTALL
-### Installing catkin
-1. sudo-apt-install python3-catkin-tools
-2. sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-
-wstool build-essential ros-melodic-catkin python-catkin-tools
+### Preparation
+1. sudo apt update
+2. sudo apt install python3-pip
 
 ### Installing ROS
 #### Setup sources.list and keys
 1. sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-2. sudo apt install curl # if you haven't already installed curl curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc |
-3. sudo apt-key add -
+2. sudo apt install curl 
+3. curl curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 #### Installation and environment setup
-1. sudo apt update
 2. sudo apt install ros-noetic-desktop-full
 3. source /opt/ros/noetic/setup.bash
 4. echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc source ~/.bashrc
@@ -36,11 +58,16 @@ wstool build-essential ros-melodic-catkin python-catkin-tools
 2. sudo apt install python3-rosdep
 3. sudo rosdep init
 4. rosdep update
-5. sudo apt-get install ros-noetic-catkin python-catkin-tools
+5. sudo apt install ros-noetic-catkin
+
+
+### Installing catkin
+1. sudo-apt-install python3-catkin-tools
+2. sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+
 
 ### Installing Rasa 
-1. sudo apt update
-2. sudo apt install python3-pip
+
 3. pip3 install pip
 4. pip3 install rasa
 5. pip3 install rasa\[spacy\]
@@ -64,13 +91,6 @@ wstool build-essential ros-melodic-catkin python-catkin-tools
 5. cd $HOME/catkin_ws
 6. catkin build
 7. source devel/setup.bash
-
-
-
-## HOW TO RUN
-### Activate Pepper nodes
-1. connect on the same pepper's net
-2. roslaunch pepper_nodes pepper_bringup.launch nao_ip:=x.x.x.x
 
 
 
