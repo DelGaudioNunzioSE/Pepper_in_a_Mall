@@ -25,6 +25,7 @@ class HeadMotionNode:
     def head_yaw(self, msg):
         try:
             self.motion_proxy.setAngles(["HeadYaw"], [msg.data[0]])
+            rospy.loginfo(f"Impostato angolo di Yaw: {msg.data[0]}")
         except:
             self.motion_proxy = self.motion_proxy = self.session.get_service("ALMotion")
             self.motion_proxy.setAngles(["HeadYaw"], [msg.data[0]])
@@ -35,6 +36,9 @@ class HeadMotionNode:
     def head_pitch(self, msg):
         try:
             self.motion_proxy.setAngles(["HeadPitch"], [msg.data[0]], msg.data[1])
+            rospy.loginfo(f"Impostato angolo di Pitch: {msg.data[0]}")
+
+
         except:
             self.motion_proxy = self.motion_proxy = self.session.get_service("ALMotion")
             self.motion_proxy.setAngles(["HeadPitch"], [msg.data[0], msg.data[1]])
