@@ -95,10 +95,11 @@ class CompositionGroups(Action):
                 
                 group_number = int(self.word_to_number(group_number))
                 if group_number == None:
-                    dispatcher.utter_message(text="The group number must be a valid number.")
+                    dispatcher.utter_message(text="The group number must be a valid number.") #specificare corretta posizione
                     return []
 
                 # Cerca la riga corrispondente al numero del gruppo
+                dispatcher.utter_message(text=f"Let me look...")
                 for i, row in enumerate(reader, start=2):  # Inizia da 2 per saltare l'intestazione
                     if i == group_number+1: #perchè salta l'intestazione
 
@@ -106,11 +107,11 @@ class CompositionGroups(Action):
                         return []
 
                 # Se il numero del gruppo non è trovato
-                dispatcher.utter_message(text=f"Group {group_number} not found in the file.")
+                dispatcher.utter_message(text=f"Group {group_number} not found in the database of competition.")
                 return []
 
         except FileNotFoundError:
-            dispatcher.utter_message(text=f"Sorry, the file {file_path} was not found.")
+            dispatcher.utter_message(text=f"Sorry, the file {file_path} was not found in my database.")
         
         return []
 
@@ -178,7 +179,8 @@ class ActionGroupRank(Action):
         
         # Se specifica il group number con questo intento, vuole saperne la posizione o i punteggi
         group_number = tracker.get_slot('group_number')
-        if group_number is not None:
+        score = next(tracker.get_latest_entity_values("score"), None) #prendo l'entità per non avere lo slot sennò lo memorizza tutta la conversazione
+        if group_number is not None and score == None:
             group_number = int(self.word_to_number(group_number))
             with open(file_path, mode='r', newline='', encoding='utf-8') as file:
                 reader = csv.reader(file)
@@ -188,4 +190,33 @@ class ActionGroupRank(Action):
                         dispatcher.utter_message(text=f"The group:{row[0]} ended in pos:{i+1}. Summary: components:{row[1]} {row[2]}, {row[4]} {row[5]}, {row[7]} {row[8]}, {row[10]} {row[11]}, PFS:{row[13]} LFS:{row[14]} GFS:{row[15]} BFS:{row[16]} HFS:{row[17]} AFS: 0.{row[18]}")
                         return []
                 dispatcher.utter_message(text=f"The group {group_number} wasn't in the contest!")
+        elif group_number is not None and score is not None:
+            group_number = int(self.word_to_number(group_number))
+            with open(file_path, mode='r', newline='', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                header = next(reader)
+                for i, row in enumerate(reader):
+                    if int(row[0]) == group_number:
+                        score = str(score).upper()
+                        #capisco di che metrica vuole il risultato
+                        if score == "PFS":
+                            sc = row[13]
+                        elif score == "LFS":
+                            sc = row[14]
+                        elif score == "GFS":
+                            sc = row[15]
+                        elif score == "BFS":
+                            sc = row[16]
+                        elif score == "HFS":
+                            sc = row[17]
+                        elif score == "AFS":
+                            sc = row[18]
+                        #se non è scritta in questo modo gli dò il risultato generale
+                        else:
+                            dispatcher.utter_message(text=f"The group:{row[0]} ended in pos:{i+1}. Summary: components:{row[1]} {row[2]}, {row[4]} {row[5]}, {row[7]} {row[8]}, {row[10]} {row[11]}, PFS:{row[13]} LFS:{row[14]} GFS:{row[15]} BFS:{row[16]} HFS:{row[17]} AFS: 0.{row[18]}")
+                            return []
+                        dispatcher.utter_message(text=f"The group:{row[0]} {score} is {sc}")
+                        return []
+                    
+        dispatcher.utter_message(text=f"Sorry, I was not payng attention, can you repeat?")  
         return[]

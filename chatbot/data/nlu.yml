@@ -16,6 +16,20 @@ nlu:
     - fourteen
     - fifteen
 
+- lookup: score
+  examples: |
+    - PFS
+    - LFS
+    - GFS
+    - BFS 
+    - HFS
+    - AFS
+    - pfs
+    - lfs
+    - gfs
+    - hfs
+    - afs
+
 - intent: greet
   examples: |
     - hey
@@ -139,6 +153,15 @@ nlu:
     - What’s the total leaderboard of the competition?
     - How is the total ranking of the competition?
     - What is the overall position in the competition?
+    - Where do the teams stand in the competition?
+    - What is the global standing in the competition?
+    - What’s the current leaderboard of the competition?
+    - Can you tell me the overall ranking of all teams in the competition?
+    - How do all the groups rank in the competition?
+    - What is the global position in the competition leaderboard?
+    - What’s the ranking of the teams in the competition right now?
+    - How is the competition going overall?
+    - What’s the total ranking of the teams?
 
 
 - intent: info_group_rank
@@ -150,5 +173,8 @@ nlu:
     - And what is the position in the ladder?
     - What is the rank of [six](group)?
     - give me the position of [two](group)
+    - What is the [pfs](score) of group [one](group)?
+    - How is the [afs](score)?
+    - Give me the [bfs](score) score
 
     

@@ -15,7 +15,7 @@ intents:
   
 entities:
   - group
-  - scores
+  - score
   - rankings
 
 slots:
@@ -26,21 +26,7 @@ slots:
     - type: from_entity
       entity: group
 
-slots:
-  scores:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: scores 
-
-slots:
-  rankings:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: rankings  
+  
 
 
 responses:
