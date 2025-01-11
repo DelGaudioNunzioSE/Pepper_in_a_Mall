@@ -1,0 +1,6 @@
+[
+  {
+    "name": "group",
+    "pattern": "(\\bone\\b|\\b1\\b|\\btwo\\b|\\b3\\b|\\beight\\b|\\bnine\\b|\\bten\\b|\\beleven\\b|\\btwelve\\b|\\bthirteen\\b|\\bfourteen\\b|\\bfifteen\\b)"
+  }
+]

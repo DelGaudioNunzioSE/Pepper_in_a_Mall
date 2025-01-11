@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-group",
+      "2": "I-group",
+      "3": "L-group",
+      "4": "U-group",
+      "5": "B-score",
+      "6": "I-score",
+      "7": "L-score",
+      "8": "U-score",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-group": 1,
+      "I-group": 2,
+      "L-group": 3,
+      "U-group": 4,
+      "B-score": 5,
+      "I-score": 6,
+      "L-score": 7,
+      "U-score": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

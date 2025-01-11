@@ -1,0 +1,180 @@
+version: "3.1"
+
+nlu:
+- lookup: group
+  examples: |
+    - one
+    - 1
+    - two
+    - 3
+    - eight
+    - nine
+    - ten
+    - eleven
+    - twelve
+    - thirteen
+    - fourteen
+    - fifteen
+
+- lookup: score
+  examples: |
+    - PFS
+    - LFS
+    - GFS
+    - BFS 
+    - HFS
+    - AFS
+    - pfs
+    - lfs
+    - gfs
+    - hfs
+    - afs
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+- intent: info_quantity
+  examples: |
+    - What is the number of groups in the competition?
+    - How many groups are in the competition?
+    - How many teams are in the contest?
+    - How many groups are competing?
+    - How many teams are participating in the tournament?
+    - What is the total number of groups in the event?
+    - How many teams are involved in the competition?
+    - How many groups are taking part in the challenge?
+    - How many participants are there, in terms of teams?
+    - How many teams are entered into the contest?
+    
+- intent: info_group
+  examples: |
+    - What are the components of group [one](group)?
+    - Tell me about the members of group [A](group)
+    - Can you describe the elements in group [B](group)?
+    - What is included in group [X](group)?
+    - Give me the details of the group [three](group)
+    - What makes up group [four](group)?
+    - Can you list the members of group [C](group)?
+    - What does group [two](group) consist of?
+    - Show me the contents of group [five](group)
+    - What are the parts of group [six](group)?
+    - Explain the composition of group [seven](group)
+
+- intent: info_ranking
+  examples: |
+    - What is the current overall ranking of the competition?
+    - Can you show me the overall competition ranking?
+    - What’s the total leaderboard of the competition?
+    - How is the total ranking of the competition?
+    - What is the overall position in the competition?
+    - Where do the teams stand in the competition?
+    - What is the global standing in the competition?
+    - What’s the current leaderboard of the competition?
+    - Can you tell me the overall ranking of all teams in the competition?
+    - How do all the groups rank in the competition?
+    - What is the global position in the competition leaderboard?
+    - What’s the ranking of the teams in the competition right now?
+    - How is the competition going overall?
+    - What’s the total ranking of the teams?
+
+
+- intent: info_group_rank
+  examples: |
+    - What is the rank of group [six](group)?
+    - What is the position of group [one](group)?
+    - How is the group [two](group) placed?
+    - And how it is placed?
+    - And what is the position in the ladder?
+    - What is the rank of [six](group)?
+    - give me the position of [two](group)
+    - What is the [pfs](score) of group [one](group)?
+    - How is the [afs](score)?
+    - Give me the [bfs](score) score
+
+    

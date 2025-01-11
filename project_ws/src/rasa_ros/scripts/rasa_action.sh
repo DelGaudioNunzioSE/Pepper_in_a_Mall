@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BOT_DIR="$(dirname "$0")/../../../../rasa-3.x-form-examples-main/02-slots"
+BOT_DIR="$(dirname "$0")/../../../../chatbot"
 
 cd $BOT_DIR
 
