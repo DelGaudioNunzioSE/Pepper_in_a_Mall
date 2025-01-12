@@ -12,6 +12,7 @@ rospy.init_node('voice_detection_node', anonymous=False)
 # this is called from the background thread
 # converte il segnale audio in un array di valori e lo pubblica sul topic
 def callback(recognizer, audio):
+    print(audio)
     data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
     data_to_send = Int16MultiArray()
     data_to_send.data = data
@@ -22,7 +23,7 @@ r = sr.Recognizer()
 r.dynamic_energy_threshold = False 
 r.energy_threshold = 100 #Modify here to set threshold. Reference: https://github.com/Uberi/speech_recognition/blob/1b737c5ceb3da6ad59ac573c1c3afe9da45c23bc/speech_recognition/__init__.py#L332
 #la threshold era a 150, modificata a 100
-m = sr.Microphone(device_index=0,
+m = sr.Microphone(device_index=1,
                     sample_rate=16000,
                     chunk_size=1024)
 
