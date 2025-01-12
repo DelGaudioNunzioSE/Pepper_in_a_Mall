@@ -12,11 +12,41 @@ intents:
   - info_group
   - info_ranking
   - info_group_rank
+  - ask_count
+  - ask_attribute
+  - ask_trajectory
+  - ask_other_trajectory
+  - ask_person_info
+  - general_competition_info
+  - general_scores_info
   
 entities:
   - group
   - score
   - rankings
+  - person
+  - attribute
+  - trajectory_index
+
+synonyms:
+  male:
+    - man
+    - men
+    - guys
+    - guy
+    - son
+  female:
+    - woman
+    - women
+    - ladies
+    - girl
+    - daughter
+  bag:
+    - bags
+    - carrying a bag
+  hat:
+    - hats
+    - wearing a hat
 
 slots:
   group_number:
@@ -24,11 +54,25 @@ slots:
     influence_conversation: true
     mappings:
     - type: from_entity
-      entity: group
-
-
-
-  
+      entity: group 
+  person:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: person
+  attribute:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: attribute
+  trajectory_index:
+    type: text
+    initial_value: -1
+    mappings:
+    - type: from_entity
+      entity: trajectory_index
 
 
 responses:
@@ -44,18 +88,39 @@ responses:
 
   utter_happy:
   - text: "Great, carry on!"
+  - text: "I am happy to help you. Ask me something if you need"
+  
 
   utter_goodbye:
   - text: "Bye"
+  - text: "Bye bye"
+  - text: "It was a pleasure, see you!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am Pepper, powered by Rasa."
+  - text: "I am Pepper, the referee of this competition!"
+  - text: "I am Pepper, the guardian of the mall."
+
+  utter_info_competition:
+  - text: "The contest is based on building a detector for pedestrian attribute recognition task in a video, aiming to identify three 
+  different attributes: gender, hat, bag, and the trajectory, which refers to the number of lines crossed.
+  Ask if you want more information about the groups or the ranking of competition."
+
+  utter_info_metrics:
+  - text: "The PFS is the Person F-Score, the LFS is the Line F-Score,
+  the GFS is the Gender F-Score, the BFS is the Bag F-Score,
+  the HFS is the Hat F-Score."
   
 actions:
   - action_groups_number
   - action_groups_composition
   - action_groups_ranking
   - action_group_rank
+  - action_count
+  - action_attribute
+  - action_get_trajectories
+  - action_get_other_trajectories
+  - action_get_person_info
 
 session_config:
   session_expiration_time: 60

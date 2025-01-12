@@ -29,5 +29,17 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-
+- story: information then trajectory
+  steps:
+  - intent: ask_attribute
+  - action: action_attribute
+  - intent: ask_trajectory
+  - action: action_get_trajectories
+  
+- story: general score info
+  steps:
+  - intent: general_competition_info
+  - action: utter_info_competition
+  - intent: general_scores_info
+  - action: utter_info_metrics
 
