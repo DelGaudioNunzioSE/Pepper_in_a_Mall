@@ -110,6 +110,7 @@ nlu:
     - so perfect
     - ok, thanks
     - thanks
+    
 
 - intent: mood_unhappy
   examples: |
@@ -147,7 +148,7 @@ nlu:
     - How many groups are taking part in the challenge?
     - How many participants are there, in terms of teams?
     - How many teams are entered into the contest?
-    
+    - how many group are in the competition
 - intent: info_group
   examples: |
     - What are the components of group [one](group)?
@@ -181,6 +182,8 @@ nlu:
     - How is the competition going overall?
     - What’s the total ranking of the teams?
     - Who won the competition?
+    - how many group surpass group 3
+    - how many group are over the group 14
 
 
 - intent: info_group_rank
