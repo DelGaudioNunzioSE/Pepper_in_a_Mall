@@ -14,7 +14,6 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
 import csv
-from num2words import num2words #esiste word2num ma non me la fa installare
 
 
 class ActionGroups(Action):
@@ -223,6 +222,7 @@ class ActionGroupRank(Action):
             return number_dict[group_number]
         else:
             return -1
+        
         
     def summary_group(self, row, i):
         text=f"The group {row[0]} ended in position {i+1}. This is a summary for you. The components are:{row[1]} {row[2]}, {row[4]} {row[5]}, {row[7]} {row[8]}, {row[10]} {row[11]}, PFS:{row[13]} LFS:{row[14]} GFS:{row[15]} BFS:{row[16]} HFS:{row[17]} AFS: 0.{row[18]}"

@@ -80,6 +80,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - ok, thanks
 
 - intent: deny
   examples: |
@@ -107,6 +108,8 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - ok, thanks
+    - thanks
 
 - intent: mood_unhappy
   examples: |

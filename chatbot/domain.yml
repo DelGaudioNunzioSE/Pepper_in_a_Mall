@@ -42,12 +42,18 @@ responses:
 
   utter_happy:
   - text: "Great, carry on!"
+  - text: "I am happy to help you. Ask me something if you need"
+  
 
   utter_goodbye:
   - text: "Bye"
+  - text: "Bye bye"
+  - text: "It was a pleasure, see you!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am Pepper, powered by Rasa."
+  - text: "I am Pepper, the referee of this competition!"
+  - text: "I am Pepper, the guardian of the mall."
 
   utter_info_competition:
   - text: "The contest is based on building a detector for pedestrian attribute recognition task in a video, aiming to identify three 
