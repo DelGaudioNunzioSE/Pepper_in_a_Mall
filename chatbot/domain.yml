@@ -12,11 +12,39 @@ intents:
   - info_group
   - info_ranking
   - info_group_rank
+  - ask_count
+  - ask_attribute
+  - ask_trajectory
+  - ask_other_trajectory
+  - ask_person_info
   
 entities:
   - group
   - score
   - rankings
+  - person
+  - attribute
+  - trajectory_index
+
+synonyms:
+  male:
+    - man
+    - men
+    - guys
+    - guy
+    - son
+  female:
+    - woman
+    - women
+    - ladies
+    - girl
+    - daughter
+  bag:
+    - bags
+    - carrying a bag
+  hat:
+    - hats
+    - wearing a hat
 
 slots:
   group_number:
@@ -24,9 +52,25 @@ slots:
     influence_conversation: true
     mappings:
     - type: from_entity
-      entity: group
-
-  
+      entity: group 
+  person:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: person
+  attribute:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: attribute
+  trajectory_index:
+    type: text
+    initial_value: -1
+    mappings:
+    - type: from_entity
+      entity: trajectory_index
 
 
 responses:
@@ -54,6 +98,11 @@ actions:
   - action_groups_composition
   - action_groups_ranking
   - action_group_rank
+  - action_count
+  - action_attribute
+  - action_get_trajectories
+  - action_get_other_trajectories
+  - action_get_person_info
 
 session_config:
   session_expiration_time: 60

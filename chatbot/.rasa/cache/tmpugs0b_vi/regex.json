@@ -1,0 +1,10 @@
+[
+  {
+    "name": "group",
+    "pattern": "(\\bone\\b|\\b1\\b|\\btwo\\b|\\b3\\b|\\beight\\b|\\bnine\\b|\\bten\\b|\\beleven\\b|\\btwelve\\b|\\bthirteen\\b|\\bfourteen\\b|\\bfifteen\\b)"
+  },
+  {
+    "name": "score",
+    "pattern": "(\\bPFS\\b|\\bLFS\\b|\\bGFS\\b|\\bBFS\\b|\\bHFS\\b|\\bAFS\\b|\\bpfs\\b|\\blfs\\b|\\bgfs\\b|\\bhfs\\b|\\bafs\\b)"
+  }
+]
