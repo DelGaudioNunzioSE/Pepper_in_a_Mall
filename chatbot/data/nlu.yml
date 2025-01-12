@@ -30,6 +30,19 @@ nlu:
     - hfs
     - afs
 
+- lookup: rankings
+  examples: |
+    - first
+    - second
+    - third
+    - last
+    - winner
+    - loser
+    - fourth
+    - seventh
+    - eight
+    - eleventh
+
 - intent: greet
   examples: |
     - hey
@@ -145,6 +158,8 @@ nlu:
     - Show me the contents of group [five](group)
     - What are the parts of group [six](group)?
     - Explain the composition of group [seven](group)
+    - What are the members of this group?
+    - What about this group?
 
 - intent: info_ranking
   examples: |
@@ -162,6 +177,7 @@ nlu:
     - What’s the ranking of the teams in the competition right now?
     - How is the competition going overall?
     - What’s the total ranking of the teams?
+    - Who won the competition?
 
 
 - intent: info_group_rank
@@ -176,5 +192,12 @@ nlu:
     - What is the [pfs](score) of group [one](group)?
     - How is the [afs](score)?
     - Give me the [bfs](score) score
+    - Who is the [winner](rankings) of the competition?
+    - Who is the [sixth](rankings) place?
+    - Who is the [seventh](rankings) place?
+    - Who is the [eightth](rankings) place?
+    - Who is the [last(rankings) place?
+    - What group is in the [last](rankings) position?
+    - What group is in the [seventh](rankings) position?
 
     
