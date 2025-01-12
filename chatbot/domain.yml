@@ -17,6 +17,8 @@ intents:
   - ask_trajectory
   - ask_other_trajectory
   - ask_person_info
+  - general_competition_info
+  - general_scores_info
   
 entities:
   - group
@@ -86,12 +88,28 @@ responses:
 
   utter_happy:
   - text: "Great, carry on!"
+  - text: "I am happy to help you. Ask me something if you need"
+  
 
   utter_goodbye:
   - text: "Bye"
+  - text: "Bye bye"
+  - text: "It was a pleasure, see you!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am Pepper, powered by Rasa."
+  - text: "I am Pepper, the referee of this competition!"
+  - text: "I am Pepper, the guardian of the mall."
+
+  utter_info_competition:
+  - text: "The contest is based on building a detector for pedestrian attribute recognition task in a video, aiming to identify three 
+  different attributes: gender, hat, bag, and the trajectory, which refers to the number of lines crossed.
+  Ask if you want more information about the groups or the ranking of competition."
+
+  utter_info_metrics:
+  - text: "The PFS is the Person F-Score, the LFS is the Line F-Score,
+  the GFS is the Gender F-Score, the BFS is the Bag F-Score,
+  the HFS is the Hat F-Score."
   
 actions:
   - action_groups_number

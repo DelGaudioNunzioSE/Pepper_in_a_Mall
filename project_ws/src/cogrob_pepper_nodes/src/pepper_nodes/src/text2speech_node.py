@@ -4,6 +4,8 @@ from pepper_nodes.srv import Text2Speech
 from optparse import OptionParser
 import rospy
 
+
+
 '''
 This class implements a ROS node able to call the Text to speech service of the robot
 '''
@@ -12,11 +14,12 @@ class Text2SpeechNode:
     '''
     The costructor creates a session to Pepper and inizializes the services
     '''
-    def __init__(self, ip, port):
+    def __init__(self, ip, port, language='English'):
         self.ip = ip
         self.port = port
         self.session = Session(ip, port)
         self.tts = self.session.get_service("ALTextToSpeech")
+        self.tts.setLanguage(language)
      
     '''
     Rececives a Text2Speech message and call the ALTextToSpeech service.
@@ -40,6 +43,8 @@ class Text2SpeechNode:
 
         rospy.spin()
 
+
+#####################################################################
 if __name__ == "__main__":
     import time
     time.sleep(3)

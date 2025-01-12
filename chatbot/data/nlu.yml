@@ -30,6 +30,19 @@ nlu:
     - hfs
     - afs
 
+- lookup: rankings
+  examples: |
+    - first
+    - second
+    - third
+    - last
+    - winner
+    - loser
+    - fourth
+    - seventh
+    - eight
+    - eleventh
+
 - intent: greet
   examples: |
     - hey
@@ -67,6 +80,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - ok, thanks
 
 - intent: deny
   examples: |
@@ -94,6 +108,8 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - ok, thanks
+    - thanks
 
 - intent: mood_unhappy
   examples: |
@@ -145,6 +161,8 @@ nlu:
     - Show me the contents of group [five](group)
     - What are the parts of group [six](group)?
     - Explain the composition of group [seven](group)
+    - What are the members of this group?
+    - What about this group?
 
 - intent: info_ranking
   examples: |
@@ -162,6 +180,7 @@ nlu:
     - What’s the ranking of the teams in the competition right now?
     - How is the competition going overall?
     - What’s the total ranking of the teams?
+    - Who won the competition?
 
 
 - intent: info_group_rank
@@ -174,8 +193,46 @@ nlu:
     - What is the rank of [six](group)?
     - give me the position of [two](group)
     - What is the [pfs](score) of group [one](group)?
+    - What is the [afs](score) of this group?
     - How is the [afs](score)?
     - Give me the [bfs](score) score
+    - Who is the [winner](rankings) of the competition?
+    - Who is the [sixth](rankings) place?
+    - Who is the [seventh](rankings) place?
+    - Who is the [eightth](rankings) place?
+    - Who is the [last(rankings) place?
+    - What group is in the [last](rankings) position?
+    - What group is in the [seventh](rankings) position?
+    - Can you tell me how went the competition?
+    - Cam you tell me the results of the competition?
+    - Can you tell me the rank of group [7](group)?
+    - who are the members of the group in position [7](rankings)?
+    - who are the members of the group in [seventh](rankings) position?
+
+- intent: general_competition_info
+  examples: |
+    - Tell me about the competition
+    - Can you tell me more about the competition?
+    - What can you tell me about the competition?
+    - Could you provide details about the competition?
+    - I'd like to know more about the competition.
+    - Can you explain the competition to me?
+    - What is the competition about?
+    - what is the porpouse of the contest?
+
+- intent: general_scores_info
+  examples: |
+    - What is the [pfs](score)?
+    - What is the pf(score) score?
+    - Whats does [afs](score) mean?
+    - what are the metrics of the competition?
+    - Explain me the metrics
+    - Explain me the [bfs]
+    - How the points are assigned?
+    - Can you tell me what is the [pfs](score)?
+    - Can you tell me what is the [pf](score) score?
+
+
 
 
 - intent: ask_count

@@ -58,3 +58,8 @@ rules:
     - intent: ask_person_info
     - action: action_get_person_info
 
+- rule: Say the porpouse of the competition
+  steps:
+  - intent: general_competition_info
+  - action: utter_info_competition
+    

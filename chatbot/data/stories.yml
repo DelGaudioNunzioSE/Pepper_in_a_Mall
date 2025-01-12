@@ -35,4 +35,11 @@ stories:
   - action: action_attribute
   - intent: ask_trajectory
   - action: action_get_trajectories
+  
+- story: general score info
+  steps:
+  - intent: general_competition_info
+  - action: utter_info_competition
+  - intent: general_scores_info
+  - action: utter_info_metrics
 
