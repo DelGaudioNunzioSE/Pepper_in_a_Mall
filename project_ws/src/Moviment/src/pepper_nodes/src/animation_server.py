@@ -1,45 +1,43 @@
 #!/usr/bin/python3
 from utils import Session
-from pepper_nodes.srv import Text2Speech
+from pepper_nodes.srv import Animation
 from optparse import OptionParser
 import rospy
 
-
-
 '''
-This class implements a ROS node able to call the Text to speech service of the robot
+This class implements a ROS node able to call the Animation service of the robot
 '''
-class Text2SpeechNode:
+class AnimationNode:
     
     '''
     The costructor creates a session to Pepper and inizializes the services
     '''
-    def __init__(self, ip, port, language='English'):
+    def __init__(self, ip, port):
         self.ip = ip
         self.port = port
         self.session = Session(ip, port)
-        self.tts = self.session.get_service("ALTextToSpeech")
-        self.tts.setLanguage(language)
+        self.ar = self.session.get_service("ALAnimationruner")
      
     '''
-    Rececives a Text2Speech message and call the ALTextToSpeech service.
-    The robot will play the text of the message
+    Rececives a Animation message and call the ALAnimationruner service.
+    The robot will run the animation
     '''
-    def say(self, msg):
+    def run(self, msg):
+        rospy.loginfo(f"Recived request for action: {msg.action}") #DEBUG
         try:
-            self.tts.say(msg.speech)
+            self.ar.run(msg.action)
         except:
             self.session.reconnect()
-            self.tts = self.session.get_service("ALTextToSpeech")
-            self.tts.say(msg.speech)
+            self.ar = self.session.get_service("ALAnimationruner")
+            self.ar.run(msg.action)
         return "ACK"
     
     '''
-    Starts the node and create the tts service
+    Starts the node and create the ar service
     '''
     def start(self):
-        rospy.init_node("text2speech_node")
-        rospy.Service('tts', Text2Speech, self.say)
+        rospy.init_node("animation_server")
+        rospy.Service('animation_service', Animation, self.run)
 
         rospy.spin()
 
@@ -54,7 +52,7 @@ if __name__ == "__main__":
     (options, args) = parser.parse_args()
 
     try:
-        ttsnode = Text2SpeechNode(options.ip, int(options.port))
-        ttsnode.start()
+        arnode = AnimationNode(ip=options.ip, port=int(options.port))
+        arnode.start()
     except rospy.ROSInterruptException:
         pass
