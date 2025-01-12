@@ -18,6 +18,7 @@ class Handler:
     def call(self, text):
         msg = Text2SpeechRequest()
         msg.speech = text.data #text.data
+        rospy.loginfo(text)
         resp = self.tts(text)
         rospy.loginfo(resp.ack)
 

@@ -1,0 +1,6 @@
+.idea
+devel
+build
+logs
+.catkin_tools
+*.pyc

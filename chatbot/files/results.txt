@@ -1,0 +1,218 @@
+{
+    "people": [
+        {
+            "id": 1,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                4,
+                3
+            ]
+        },
+        {
+            "id": 2,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                2,
+                4,
+                3,
+                4,
+                3
+            ]
+        },
+        {
+            "id": 3,
+            "gender": "Female",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                4,
+                3
+            ]
+        },
+        {
+            "id": 4,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                1,
+                4
+            ]
+        },
+        {
+            "id": 5,
+            "gender": "Male",
+            "bag": "Yes",
+            "hat": "No",
+            "trajectory": [
+                2,
+                4,
+                3,
+                4,
+                3,
+                1,
+                4
+            ]
+        },
+        {
+            "id": 6,
+            "gender": "Male",
+            "bag": "Yes",
+            "hat": "No",
+            "trajectory": [
+                2,
+                4,
+                1
+            ]
+        },
+        {
+            "id": 7,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "Yes",
+            "trajectory": [
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": 8,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                2,
+                4,
+                3,
+                1,
+                4,
+                3
+            ]
+        },
+        {
+            "id": 9,
+            "gender": "Male",
+            "bag": "Yes",
+            "hat": "No",
+            "trajectory": [
+                2,
+                4
+            ]
+        },
+        {
+            "id": 10,
+            "gender": "Male",
+            "bag": "Yes",
+            "hat": "Yes",
+            "trajectory": [
+                3
+            ]
+        },
+        {
+            "id": 11,
+            "gender": "Female",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                2
+            ]
+        },
+        {
+            "id": 12,
+            "gender": "Male",
+            "bag": "Yes",
+            "hat": "No",
+            "trajectory": [
+                3,
+                1,
+                4,
+                1,
+                1
+            ]
+        },
+        {
+            "id": 13,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                1,
+                4
+            ]
+        },
+        {
+            "id": 14,
+            "gender": "Male",
+            "bag": "Yes",
+            "hat": "No",
+            "trajectory": [
+                3
+            ]
+        },
+        {
+            "id": 15,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                1,
+                1
+            ]
+        },
+        {
+            "id": 16,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": [
+                4,
+                3
+            ]
+        },
+        {
+            "id": 17,
+            "gender": "Male",
+            "bag": "Yes",
+            "hat": "No",
+            "trajectory": [
+                1
+            ]
+        },
+        {
+            "id": 18,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "Yes",
+            "trajectory": [
+                2,
+                3
+            ]
+        },
+        {
+            "id": 19,
+            "gender": "Female",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": []
+        },
+        {
+            "id": 20,
+            "gender": "Male",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": []
+        },
+        {
+            "id": 21,
+            "gender": "Female",
+            "bag": "No",
+            "hat": "No",
+            "trajectory": []
+        }
+    ]
+}

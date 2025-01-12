@@ -1,0 +1,307 @@
+version: "3.1"
+
+nlu:
+- lookup: group
+  examples: |
+    - one
+    - 1
+    - two
+    - 3
+    - eight
+    - nine
+    - ten
+    - eleven
+    - twelve
+    - thirteen
+    - fourteen
+    - fifteen
+
+- lookup: score
+  examples: |
+    - PFS
+    - LFS
+    - GFS
+    - BFS 
+    - HFS
+    - AFS
+    - pfs
+    - lfs
+    - gfs
+    - hfs
+    - afs
+
+- lookup: rankings
+  examples: |
+    - first
+    - second
+    - third
+    - last
+    - winner
+    - loser
+    - fourth
+    - seventh
+    - eight
+    - eleventh
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ok, thanks
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - ok, thanks
+    - thanks
+    
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+- intent: info_quantity
+  examples: |
+    - What is the number of groups in the competition?
+    - How many groups are in the competition?
+    - How many teams are in the contest?
+    - How many groups are competing?
+    - How many teams are participating in the tournament?
+    - What is the total number of groups in the event?
+    - How many teams are involved in the competition?
+    - How many groups are taking part in the challenge?
+    - How many participants are there, in terms of teams?
+    - How many teams are entered into the contest?
+    - how many group are in the competition
+- intent: info_group
+  examples: |
+    - What are the components of group [one](group)?
+    - Tell me about the members of group [A](group)
+    - Can you describe the elements in group [B](group)?
+    - What is included in group [X](group)?
+    - Give me the details of the group [three](group)
+    - What makes up group [four](group)?
+    - Can you list the members of group [C](group)?
+    - What does group [two](group) consist of?
+    - Show me the contents of group [five](group)
+    - What are the parts of group [six](group)?
+    - Explain the composition of group [seven](group)
+    - What are the members of this group?
+    - What about this group?
+
+- intent: info_ranking
+  examples: |
+    - What is the current overall ranking of the competition?
+    - Can you show me the overall competition ranking?
+    - What’s the total leaderboard of the competition?
+    - How is the total ranking of the competition?
+    - What is the overall position in the competition?
+    - Where do the teams stand in the competition?
+    - What is the global standing in the competition?
+    - What’s the current leaderboard of the competition?
+    - Can you tell me the overall ranking of all teams in the competition?
+    - How do all the groups rank in the competition?
+    - What is the global position in the competition leaderboard?
+    - What’s the ranking of the teams in the competition right now?
+    - How is the competition going overall?
+    - What’s the total ranking of the teams?
+    - Who won the competition?
+    - how many group surpass group 3
+    - how many group are over the group 14
+
+
+- intent: info_group_rank
+  examples: |
+    - What is the rank of group [six](group)?
+    - What is the position of group [one](group)?
+    - How is the group [two](group) placed?
+    - And how it is placed?
+    - And what is the position in the ladder?
+    - What is the rank of [six](group)?
+    - give me the position of [two](group)
+    - What is the [pfs](score) of group [one](group)?
+    - What is the [afs](score) of this group?
+    - How is the [afs](score)?
+    - Give me the [bfs](score) score
+    - Who is the [winner](rankings) of the competition?
+    - Who is the [sixth](rankings) place?
+    - Who is the [seventh](rankings) place?
+    - Who is the [eightth](rankings) place?
+    - Who is the [last(rankings) place?
+    - What group is in the [last](rankings) position?
+    - What group is in the [seventh](rankings) position?
+    - Can you tell me how went the competition?
+    - Cam you tell me the results of the competition?
+    - Can you tell me the rank of group [7](group)?
+    - who are the members of the group in position [7](rankings)?
+    - who are the members of the group in [seventh](rankings) position?
+
+- intent: general_competition_info
+  examples: |
+    - Tell me about the competition
+    - Can you tell me more about the competition?
+    - What can you tell me about the competition?
+    - Could you provide details about the competition?
+    - I'd like to know more about the competition.
+    - Can you explain the competition to me?
+    - What is the competition about?
+    - what is the porpouse of the contest?
+
+- intent: general_scores_info
+  examples: |
+    - What is the [pfs](score)?
+    - What is the pf(score) score?
+    - Whats does [afs](score) mean?
+    - what are the metrics of the competition?
+    - Explain me the metrics
+    - Explain me the [bfs]
+    - How the points are assigned?
+    - Can you tell me what is the [pfs](score)?
+    - Can you tell me what is the [pf](score) score?
+
+
+
+
+- intent: ask_count
+  examples: |
+    - How many person are there in the shopping mall?
+    - And how many of them are [male](attribute)?
+    - How many [male](attribute) have a [bag](attribute)?
+    - Count the [female](attribute) with a [hat](attribute).
+    - How many people have a [bag](attribute) and are [male](attribute)?
+    - Count [males](attribute) with [bags](attribute).
+    - How many [men](attribute) are carrying [bags](attribute)?
+    - How many [women](attribute) are wearing [hats](attribute)?
+    - Give me the count of [females](attribute) with [hats](attribute).
+    - Tell me how many [guys](attribute) have a [bag](attribute).
+    - Count the number of [ladies](attribute) with [hats](attribute).
+    - How much people have a [hat](attribute) and a [bag](attribute)?
+    - Count people wearing [hats](attribute).
+    - how many person are there in the shopping mall?
+    - Number of people.
+    - Number of [guys](attribute) have a [bag](attribute).
+
+- intent: ask_attribute
+  examples: |
+    - Who are [male](attribute) have a [bag](attribute).
+    - I'm looking for a [female](attribute) with a [hat](attribute).
+    - There are people with [bag](attribute) and that are [male](attribute).
+    - There are [males](attribute) with [bags](attribute).
+    - I'm looking for [men](attribute) are carrying [bags](attribute).
+    - There is a [women](attribute) are wearing [hats](attribute).
+    - Please, tell me if a you see a [females](attribute) with [hats](attribute).
+    - Can you see a [guys](attribute) have a [bag](attribute)?.
+    - We are Looking for prople with [hat](attribute) and a [bag](attribute).
+
+
+- intent: ask_trajectory
+  examples: |
+    - Where the [male](attribute) have a [bag](attribute) passed?
+    - Show me the path of the [woman](attribute) carrying a [bag](attribute)
+    - Can you tell me where the [boy](attribute) wearing an [hat](attribute) went?
+    - i lost my [son](attribute), he has an [hat](attribute) and a bag
+    - Give me the position of a [man](attribute)
+    - position of a [man](attribute)
+    - trajectory of a [woman](attribute) with bag
+    - I lost my children? He is a [boy](attribute) with the [hat](attribute)
+
+
+- intent: ask_other_trajectory
+  examples: |
+    - Do you have other location data?
+    - Are there any other position available?
+    - I can't see him.
+    - I can't see him, do you have orher position?
+    - what trajectory did this person
+    - Are there more location details available?
+    - trajectory of a [7](person)
+    - I want to know the trajectories of the person with ID [5](person)
+    - Show me the path of the individual with ID [10](person)
+    - Can you tell me where the [2](person)) went?
+    - path of [11](person)
+    - what is the position of id [8](person)
+    - I can not see him. Did you see him in any other place?
+
+- intent: ask_person_info
+  examples: |
+    - Tell me the details of the person with ID [5](person).
+    - I want information about the person with ID [10](person).
+    - Who is the person with ID [7](person)?
+    
+

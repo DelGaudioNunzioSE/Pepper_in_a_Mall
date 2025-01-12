@@ -1,0 +1,65 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  
+- rule: Say the number of the groups
+  steps:
+  - intent: info_quantity
+  - action: action_groups_number
+  
+- rule: Say the composition of the groups
+  steps:
+  - intent: info_group
+  - action: action_groups_composition
+
+- rule: Say the ranking of the competition
+  steps:
+  - intent: info_ranking
+  - action: action_groups_ranking
+
+- rule: Say the ranking of the competition of a single group, and other informations
+  steps:
+  - intent: info_group_rank
+  - action: action_group_rank
+
+- rule: Ask about the number of people with an attribute
+  steps:
+    - intent: ask_count
+    - action: action_count
+
+- rule: Ask who has specific attributes
+  steps:
+    - intent: ask_attribute
+    - action: action_attribute
+
+
+- rule: Ask about the trajectories
+  steps:
+    - intent: ask_trajectory
+    - action: action_get_trajectories
+
+- rule: Ask about all trajectories
+  steps:
+    - intent: ask_other_trajectory
+    - action: action_get_other_trajectories
+
+- rule: Ask for person information by ID
+  steps:
+    - intent: ask_person_info
+    - action: action_get_person_info
+
+- rule: Say the porpouse of the competition
+  steps:
+  - intent: general_competition_info
+  - action: utter_info_competition
+    
