@@ -31,4 +31,9 @@ rules:
   steps:
   - intent: info_group_rank
   - action: action_group_rank
-  
+
+- rule: Say the porpouse of the competition
+  steps:
+  - intent: general_competition_info
+  - action: utter_info_competition
+    

@@ -29,5 +29,10 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-
+- story: general score info
+  steps:
+  - intent: general_competition_info
+  - action: utter_info_competition
+  - intent: general_scores_info
+  - action: utter_info_metrics
 

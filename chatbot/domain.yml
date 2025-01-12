@@ -12,6 +12,8 @@ intents:
   - info_group
   - info_ranking
   - info_group_rank
+  - general_competition_info
+  - general_scores_info
   
 entities:
   - group
@@ -25,10 +27,6 @@ slots:
     mappings:
     - type: from_entity
       entity: group
-
-
-
-  
 
 
 responses:
@@ -50,6 +48,16 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_info_competition:
+  - text: "The contest is based on building a detector for pedestrian attribute recognition task in a video, aiming to identify three 
+  different attributes: gender, hat, bag, and the trajectory, which refers to the number of lines crossed.
+  Ask if you want more information about the groups or the ranking of competition."
+
+  utter_info_metrics:
+  - text: "The PFS is the Person F-Score, the LFS is the Line F-Score,
+  the GFS is the Gender F-Score, the BFS is the Bag F-Score,
+  the HFS is the Hat F-Score."
   
 actions:
   - action_groups_number

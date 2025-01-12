@@ -159,49 +159,64 @@ class ActionGroupRank(Action):
             'one': 1,
             'winner': 1,
             'first':1,
+            '1': 1,
 
             'two': 2,
             'second':2,
+            '2':2,
 
             'three': 3,
             'third':3,
+            '3':3,
 
             'four': 4,
             'fourth':4,
+            '4':4,
 
             'five': 5,
             'fifth': 5,
+            '5':5,
 
             'six': 6,
             'sixth':6,
+            '6':6,
 
             'seven': 7,
             'seventh': 7,
+            '7':7,
 
             'eight': 8,
             'eighth': 8,
+            '8':8,
 
             'nine': 9,
             'nineth':9,
+            '9':9,
 
             'ten': 10,
             'tenth':10,
+            '10':10,
 
             'eleven': 11,
             'eleventh': 11,
+            '11':11,
 
             'twelve': 12,
             'twelveth': 12,
+            '12':12,
 
             'thirteen': 13,
             'thirteenth': 13,
+            '13':13,
 
             'fourteen': 14,
             'fourteenth':14,
+            '14':14,
 
             'last': 15,
             'fifteen': 15,
-            'fifteenth': 15
+            'fifteenth': 15,
+            '15':15
         }
         group_number = group_number.strip().lower() #toglie spazi o maiuscole
         if group_number in number_dict:

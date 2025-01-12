@@ -190,6 +190,7 @@ nlu:
     - What is the rank of [six](group)?
     - give me the position of [two](group)
     - What is the [pfs](score) of group [one](group)?
+    - What is the [afs](score) of this group?
     - How is the [afs](score)?
     - Give me the [bfs](score) score
     - Who is the [winner](rankings) of the competition?
@@ -199,5 +200,35 @@ nlu:
     - Who is the [last(rankings) place?
     - What group is in the [last](rankings) position?
     - What group is in the [seventh](rankings) position?
+    - Can you tell me how went the competition?
+    - Cam you tell me the results of the competition?
+    - Can you tell me the rank of group [7](group)?
+    - who are the members of the group in position [7](rankings)?
+    - who are the members of the group in [seventh](rankings) position?
+
+- intent: general_competition_info
+  examples: |
+    - Tell me about the competition
+    - Can you tell me more about the competition?
+    - What can you tell me about the competition?
+    - Could you provide details about the competition?
+    - I'd like to know more about the competition.
+    - Can you explain the competition to me?
+    - What is the competition about?
+    - what is the porpouse of the contest?
+
+- intent: general_scores_info
+  examples: |
+    - What is the [pfs](score)?
+    - What is the pf(score) score?
+    - Whats does [afs](score) mean?
+    - what are the metrics of the competition?
+    - Explain me the metrics
+    - Explain me the [bfs]
+    - How the points are assigned?
+    - Can you tell me what is the [pfs](score)?
+    - Can you tell me what is the [pf](score) score?
+
+
 
     
