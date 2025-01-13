@@ -6,3 +6,4 @@ chatbot/models/
 __pychache__/
 chatbot/models/.rasa/cache/
 .vscode/
+__pycache__/

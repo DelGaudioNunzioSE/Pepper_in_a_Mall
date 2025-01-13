@@ -9,7 +9,7 @@ class Handler:
     The constructor creates the service proxy object, which is able to make the robot speak
     '''
     def __init__(self):
-        self.tts = rospy.ServiceProxy("/tts", Text2Speech)
+        self.tts = rospy.ServiceProxy("tts", Text2Speech)
         
 
     '''
@@ -18,8 +18,8 @@ class Handler:
     def call(self, text):
         msg = Text2SpeechRequest()
         msg.speech = text.data #text.data
-        rospy.loginfo(text)
-        resp = self.tts(text)
+        rospy.loginfo(msg)
+        resp = self.tts(msg)
         rospy.loginfo(resp.ack)
 
 if __name__ == "__main__":

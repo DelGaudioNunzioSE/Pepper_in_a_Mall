@@ -57,6 +57,8 @@ catkin_python_setup()
 ## Generate services in the 'srv' folder
 add_service_files(
   FILES
+  Animation.srv
+  Led.srv
   ExecuteJS.srv
   LoadUrl.srv
   Rest.srv
