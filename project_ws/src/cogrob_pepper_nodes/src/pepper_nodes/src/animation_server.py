@@ -52,7 +52,7 @@ if __name__ == "__main__":
     (options, args) = parser.parse_args()
 
     try:
-        arnode = AnimationNode(ip=options.ip, port=int(options.port))
-        arnode.start()
+        animation = AnimationNode(ip=options.ip, port=int(options.port))
+        animation.start()
     except rospy.ROSInterruptException:
         pass
