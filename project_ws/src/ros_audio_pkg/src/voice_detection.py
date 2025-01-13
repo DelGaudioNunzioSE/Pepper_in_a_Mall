@@ -20,7 +20,7 @@ class VoiceDetectionNode:
         self.recognizer.energy_threshold = 100  # Set energy threshold (adjustable)
 
         # Set up the microphone (device_index should be set correctly depending on the system)
-        self.microphone = sr.Microphone(device_index=0, sample_rate=16000, chunk_size=1024)
+        self.microphone = sr.Microphone(device_index=3, sample_rate=16000, chunk_size=1024)
 
         # Start listening in the background and call the callback when audio is detected
         self.stop_listening = self.recognizer.listen_in_background(self.microphone, self.audio_callback)

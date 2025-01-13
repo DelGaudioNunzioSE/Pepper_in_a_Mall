@@ -27,4 +27,5 @@ if __name__ == "__main__":
     rospy.init_node(NODE_NAME)
     handler = Handler()
     sub = rospy.Subscriber("bot_answer", String, handler.call)
+    rospy.spin()
 

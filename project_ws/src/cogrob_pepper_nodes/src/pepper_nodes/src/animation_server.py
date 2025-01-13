@@ -16,10 +16,10 @@ class AnimationNode:
         self.ip = ip
         self.port = port
         self.session = Session(ip, port)
-        self.ar = self.session.get_service("ALAnimationruner")
+        self.ar = self.session.get_service("ALAnimationPlayer")
      
     '''
-    Rececives a Animation message and call the ALAnimationruner service.
+    Rececives a Animation message and call the ALAnimationPlayer service.
     The robot will run the animation
     '''
     def run(self, msg):
@@ -28,7 +28,7 @@ class AnimationNode:
             self.ar.run(msg.action)
         except:
             self.session.reconnect()
-            self.ar = self.session.get_service("ALAnimationruner")
+            self.ar = self.session.get_service("ALAnimationPlayer")
             self.ar.run(msg.action)
         return "ACK"
     

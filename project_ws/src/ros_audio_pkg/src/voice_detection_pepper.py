@@ -62,6 +62,7 @@ class PepperAudioProcessor:
             # Publish the result
             msg = Int16MultiArray()
             msg.data = list(recognized_text.encode('utf-8'))
+            print(msg) # DEBUG
             self.pub_result.publish(msg)
 
         except Exception as e:
