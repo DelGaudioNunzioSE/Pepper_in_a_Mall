@@ -230,7 +230,7 @@ nlu:
     - Whats does [afs](score) mean?
     - what are the metrics of the competition?
     - Explain me the metrics
-    - Explain me the [bfs]
+    - Explain me the [bfs](score)
     - How the points are assigned?
     - Can you tell me what is the [pfs](score)?
     - Can you tell me what is the [pf](score) score?

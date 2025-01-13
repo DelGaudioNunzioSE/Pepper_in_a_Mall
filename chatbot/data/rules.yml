@@ -63,3 +63,7 @@ rules:
   - intent: general_competition_info
   - action: utter_info_competition
     
+- rule: Say the scores of the competition
+  steps:
+  - intent: general_scores_info
+  - action: utter_info_metrics
