@@ -16,8 +16,8 @@ class VoiceDetectionNode:
 
         # Initialize recognizer for speech recognition
         self.recognizer = sr.Recognizer()
-        self.recognizer.dynamic_energy_threshold = False
-        self.recognizer.energy_threshold = 100  # Set energy threshold (adjustable)
+        self.recognizer.dynamic_energy_threshold = True
+        #self.recognizer.energy_threshold = 100  # Set energy threshold (adjustable)
 
         # Set up the microphone (device_index should be set correctly depending on the system)
         self.microphone = sr.Microphone(device_index=3, sample_rate=16000, chunk_size=1024)

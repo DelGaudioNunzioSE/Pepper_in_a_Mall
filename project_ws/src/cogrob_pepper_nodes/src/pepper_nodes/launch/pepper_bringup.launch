@@ -11,5 +11,6 @@
   <node pkg="pepper_nodes" type="image_input_node.py" name="image_input" required="false" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
   <node pkg="pepper_nodes" type="animation_server.py" name="animation_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
   <node pkg="pepper_nodes" type="auto_track_server.py" name="auto_track_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
+  <node pkg="pepper_nodes" type="led_server.py" name="led_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
 
 </launch>

@@ -25,11 +25,11 @@ class AnimationNode:
     def run(self, msg):
         rospy.loginfo(f"Recived request for action: {msg.action}") #DEBUG
         try:
-            self.ar.run(msg.action)
+            self.ar.runTag(msg.action)
         except:
             self.session.reconnect()
             self.ar = self.session.get_service("ALAnimationPlayer")
-            self.ar.run(msg.action)
+            self.ar.runTag(msg.action)
         return "ACK"
     
     '''

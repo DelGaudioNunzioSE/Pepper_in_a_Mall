@@ -4,6 +4,7 @@ import random
 import rospy
 from pepper_nodes.srv import Led, LedRequest, LedResponse
 from std_msgs.msg import String
+from std_msgs.msg import Int16MultiArray
 
 class Handler:
     '''
@@ -27,13 +28,6 @@ class Handler:
         rospy.loginfo(resp.ack)
 
 
-    def call_off(self, text):
-        msg = LedRequest()
-        msg.onoff = 'OFF' #se off
-        rospy.loginfo("Request for led") #DEBUG
-        resp = self.lof(msg)
-        rospy.loginfo(resp.ack)
-
 
 
 
@@ -46,6 +40,6 @@ if __name__ == "__main__":
     rospy.init_node(NODE_NAME)
     handler = Handler()
     # topic to read to know what Led do
-    sub = rospy.Subscriber(TOPIC_START, String, handler.call_on)
-    sub = rospy.Subscriber(TOPIC_STOP, String, handler.call_off)
+    sub = rospy.Subscriber(TOPIC_START, Int16MultiArray, handler.call_on)
+    rospy.spin()
 

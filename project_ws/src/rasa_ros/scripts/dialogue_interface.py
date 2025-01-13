@@ -37,6 +37,9 @@ class DialogueInterface:
         try:
             print("[IN]:", message)
             bot_answer = self.dialogue_service(message) #chiama il service dando in input il messaggio
+            if(bot_answer.answer==""):
+                bot_answer.answer = "I didn't understand, can you repeat?"
+                
             self.set_text(bot_answer.answer) #restituisce la risposta e lo stampa sulla shell
             self.pub.publish(bot_answer.answer) #chiama il nodo tts e fa parlare
         except rospy.ServiceException as e:

@@ -4,7 +4,7 @@ import random
 import rospy
 from pepper_nodes.srv import Animation, AnimationRequest, AnimationResponse
 from std_msgs.msg import String
-
+from std_msgs.msg import Int16MultiArray
 class Handler:
     '''
     The constructor creates the service proxy object, which is able to make the robot speak
@@ -21,6 +21,7 @@ class Handler:
     def call(self, text):
         msg = AnimationRequest()
         action=self._detect_action(text.data) # evaluate action
+        print('animazione:',text.data)
         msg.action=action
         rospy.loginfo(f"Request for action: {msg.action}") #DEBUG
         resp = self.ar(msg)
@@ -32,34 +33,20 @@ class Handler:
         if 'HELLO' in response:
             base_action="animations/Stand/Gestures/Hey_"
             random_number=3
-            final_string = f"{base_action}{random_number}"
+            final_string = "hello"
 
         elif 'BYE' in response or 'BOODBYE' in response:
-            base_action="animations/Stand/Gestures/Hey_6"
+            base_action="hello"
             final_string = f"{base_action}"
             
         else:
-            base_action="animations/Stand/BodyTalk/BodyTalk_"
-            random_number=random.randint(1, 16)
-            final_string = f"{base_action}{random_number}"
+            #base_action="animations/Stand/BodyTalk/BodyTalk_"
+            #random_number=random.randint(1, 16)
+            #final_string = f"{base_action}{random_number}"
+            final_string = "body language" 
         return final_string
     
-    def call_think(self, audio):
-        msg = AnimationRequest()
-        msg.action="animations/Stand/Gestures/Thinking_1"
-        rospy.loginfo(f"Request for action: {msg.action}") #DEBUG
-        resp = self.ar(msg)
-        rospy.loginfo(resp.ack)
 
-
-    def call_test(self, test):
-        print('H1')
-        msg = AnimationRequest()
-        action=self._detect_action(test) # evaluate action
-        msg.action=action
-        rospy.loginfo(f"Request for action: {msg.action}") #DEBUG
-        resp = self.ar(msg)
-        rospy.loginfo(resp.ack)
 
 
 ############################################################
@@ -68,7 +55,6 @@ if __name__ == "__main__":
     rospy.init_node(NODE_NAME)
     handler = Handler()
     # topic to read to know what animation do
-    #handler.call_test('HELLO')
+    print('We animation')
     sub = rospy.Subscriber("bot_answer", String, handler.call)
-    sub = rospy.Subscriber("bot_answer", String, handler.call_think)
-
+    rospy.spin()
