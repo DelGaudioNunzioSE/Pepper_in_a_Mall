@@ -29,7 +29,7 @@ class SpeechRecognitionNode:
 
 
 
-    def _word_replacement(self,testo, lista_parole=['person','man','woman','men','women','people','hat','hats','bag','bags','have','has','how'],soglia=0.7):
+    def _word_replacement(self,testo, lista_parole=['person','man','woman','men','women','people','hat','hats','bag','bags','have','has','how', 'Pepper'],soglia=0.7):
         """
         Sostituisce le parole nella stringa con quelle più simili presenti in una lista, se la somiglianza supera una soglia.
 

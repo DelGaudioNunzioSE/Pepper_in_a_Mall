@@ -17,7 +17,7 @@ class LedNode:
         self.port = port
         self.session = Session(ip, port)
         self.lof = self.session.get_service("ALLeds")
-        self.DURATION=float(1) # <-- set duration
+        self.DURATION=float(5) # <-- set duration
      
     
 

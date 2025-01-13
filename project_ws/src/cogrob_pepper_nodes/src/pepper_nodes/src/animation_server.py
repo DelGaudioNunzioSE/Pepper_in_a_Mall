@@ -3,6 +3,7 @@ from utils import Session
 from pepper_nodes.srv import Animation
 from optparse import OptionParser
 import rospy
+import time
 
 '''
 This class implements a ROS node able to call the Animation service of the robot
@@ -17,6 +18,7 @@ class AnimationNode:
         self.port = port
         self.session = Session(ip, port)
         self.ar = self.session.get_service("ALAnimationPlayer")
+        self.reset = self.session.get_service("ALRobotPosture")
      
     '''
     Rececives a Animation message and call the ALAnimationPlayer service.
@@ -26,10 +28,14 @@ class AnimationNode:
         rospy.loginfo(f"Recived request for action: {msg.action}") #DEBUG
         try:
             self.ar.runTag(msg.action)
+            time.sleep(1) # to let the animation end
+            self.reset.goToPosture("Stand",1.0) # reset position
         except:
             self.session.reconnect()
             self.ar = self.session.get_service("ALAnimationPlayer")
             self.ar.runTag(msg.action)
+            time.sleep(1)
+            self.reset.goToPosture("Stand",1.0)
         return "ACK"
     
     '''

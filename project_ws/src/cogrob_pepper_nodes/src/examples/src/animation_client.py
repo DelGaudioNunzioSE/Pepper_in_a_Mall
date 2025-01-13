@@ -47,6 +47,8 @@ class Handler:
         return final_string
     
 
+    
+
 
 
 ############################################################
@@ -55,6 +57,5 @@ if __name__ == "__main__":
     rospy.init_node(NODE_NAME)
     handler = Handler()
     # topic to read to know what animation do
-    print('We animation')
     sub = rospy.Subscriber("bot_answer", String, handler.call)
     rospy.spin()
