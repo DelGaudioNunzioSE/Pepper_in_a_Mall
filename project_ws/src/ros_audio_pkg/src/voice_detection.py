@@ -17,11 +17,12 @@ class VoiceDetectionNode:
         # Initialize recognizer for speech recognition
         self.recognizer = sr.Recognizer()
         self.recognizer.dynamic_energy_threshold = False
-        self.recognizer.energy_threshold=220 #to set for evry mic
+        self.recognizer.energy_threshold=110 #to set for evry mic
         
 
         # Set up the microphone (device_index should be set correctly depending on the system)
         self.microphone = sr.Microphone(device_index=4, sample_rate=44100, chunk_size=2048)
+
 
         # Start listening in the background and call the callback when audio is detected
         self.stop_listening = self.recognizer.listen_in_background(self.microphone, self.audio_callback)

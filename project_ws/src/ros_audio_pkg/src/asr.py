@@ -80,6 +80,7 @@ class SpeechRecognitionNode:
             self.pub_text.publish(new_spoken_text)
 
         except sr.UnknownValueError:
+            
             rospy.logwarn("Google Speech Recognition could not understand the audio.")
         except sr.RequestError as e:
             rospy.logerr(f"Google Speech Recognition service error: {e}")
