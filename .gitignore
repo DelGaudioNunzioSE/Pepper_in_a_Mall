@@ -5,3 +5,4 @@ logs/
 chatbot/models/
 chatbot/models/.rasa/cache/
 .vscode/
+__pycache__/
