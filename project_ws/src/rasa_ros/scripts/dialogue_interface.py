@@ -5,7 +5,7 @@ from rasa_ros.srv import Dialogue, DialogueResponse
 from std_msgs.msg import String
 #from rasa_ros.srv import Text2Speech, Text2SpeechRequest, Text2SpeechResponse
 import os
-
+from rasa_ros.srv import Dialogue, DialogueResponse
 
 
 
@@ -24,6 +24,7 @@ class DialogueInterface:
         #tutti i nodi di Pepper singolarmente, senza dover essere inseriti in questo package.
         self.dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
         self.pub = rospy.Publisher('bot_answer', String, queue_size=10)
+        self.last_answer=""
 
     def get_text(self):
         return input("[IN]:  ") 
@@ -39,11 +40,17 @@ class DialogueInterface:
             bot_answer = self.dialogue_service(message) #chiama il service dando in input il messaggio
             if(bot_answer.answer==""):
                 bot_answer.answer = "I didn't understand, can you repeat?"
-                
+            
+            if(str(self.last_answer).upper()==str(message).upper()):
+                rospy.loginfo('Pepper listened himself')
+                return
             self.set_text(bot_answer.answer) #restituisce la risposta e lo stampa sulla shell
             self.pub.publish(bot_answer.answer) #chiama il nodo tts e fa parlare
+            self.last_answer=bot_answer.answer
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)
+    
+
 
 
 def main():

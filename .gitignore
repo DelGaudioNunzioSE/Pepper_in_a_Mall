@@ -8,3 +8,4 @@ chatbot/models/.rasa/cache/
 chatbot/.rasa/cache/
 .vscode/
 __pycache__/
+*.zip

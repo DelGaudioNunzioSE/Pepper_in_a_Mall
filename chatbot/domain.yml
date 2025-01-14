@@ -19,6 +19,9 @@ intents:
   - ask_person_info
   - general_competition_info
   - general_scores_info
+  - ask_for_someone
+  - happy_competition
+  - request
   
 entities:
   - group
@@ -27,6 +30,7 @@ entities:
   - person
   - attribute
   - trajectory_index
+  - shops
 
 synonyms:
   male:
@@ -74,6 +78,11 @@ slots:
     - type: from_entity
       entity: trajectory_index
 
+forms:
+  attribute_form:
+    required_slots:
+    - attribute
+
 
 responses:
   utter_greet:
@@ -86,9 +95,16 @@ responses:
   utter_did_that_help:
   - text: "Did that help you?"
 
+  utter_help:
+  - text: "What happened? Can i help you?"
+  - text: "Tell me, i know information about the artificial vision competition and this shopping center, maybe i can help you"
+  - text: "Can i help you in some way?"
+  - text: "Maybe i can help you"
+
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "I am happy to help you!"
   - text: "I am happy to help you. Ask me something if you need"
+  - text: "Nice, ask me more if you need!"
   
 
   utter_goodbye:
@@ -100,6 +116,7 @@ responses:
   - text: "I am Pepper, powered by Rasa."
   - text: "I am Pepper, the referee of this competition!"
   - text: "I am Pepper, the guardian of the mall."
+  - text: "I am Pepper, ask me something about the mall or the artificial vision competition!"
 
   utter_info_competition:
   - text: "The contest is based on building a detector for pedestrian attribute recognition task in a video, aiming to identify three 
@@ -110,6 +127,15 @@ responses:
   - text: "The PFS is the Person F-Score, the LFS is the Line F-Score,
   the GFS is the Gender F-Score, the BFS is the Bag F-Score,
   the HFS is the Hat F-Score."
+
+  utter_find_someone:
+  - text: "It might be helpful to search in the mall. Please provide details such as gender, whether they are carrying a bag, wearing a hat, or both."
+
+  utter_happy_competition:
+  - text: "Congratulation! Let me remember your interesting project!"
+  
+  utter_why:
+  - text: "Great! Tell me why if you want"
   
 actions:
   - action_groups_number
@@ -121,6 +147,7 @@ actions:
   - action_get_trajectories
   - action_get_other_trajectories
   - action_get_person_info
+  - clear_action_attribute
 
 session_config:
   session_expiration_time: 60

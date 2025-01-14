@@ -2,7 +2,9 @@
 from utils import Session
 from optparse import OptionParser
 import rospy
-
+from std_msgs.msg import String
+import time
+from rasa_ros.srv import Dialogue, DialogueResponse
 
 '''
 This class implements a ROS node able to call the AutoTrack service of the robot
@@ -21,11 +23,11 @@ class AutoTrackNode:
         self.motion.wakeUp()
         self.ba.setEngagementMode("FullyEngaged")
         self.ba.setEnabled(True)   
-        
+        self.em = self.session.get_service("ALMood")
 
-    '''
-    starts the node and create the ba service
-    '''
+
+
+
     def start(self):
         rospy.init_node("AutoTrack_server")
 
@@ -46,3 +48,4 @@ if __name__ == "__main__":
         banode.start()
     except rospy.ROSInterruptException:
         pass
+    rospy.spin()

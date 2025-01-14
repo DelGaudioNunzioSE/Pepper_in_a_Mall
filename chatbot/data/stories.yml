@@ -9,25 +9,6 @@ stories:
   - intent: mood_great
   - action: utter_happy
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
 
 - story: information then trajectory
   steps:
@@ -42,4 +23,20 @@ stories:
   - action: utter_info_competition
   - intent: general_scores_info
   - action: utter_info_metrics
+
+- story: help a person
+  steps:
+  - intent: mood_unhappy
+  - action: utter_help
+
+- story: happy for competition
+  steps: 
+  - intent: mood_great
+  - action: utter_why
+  - intent: happy_competition
+  - action: utter_happy_competition
+  - action: action_group_rank
+
+
+
 

@@ -62,8 +62,41 @@ rules:
   steps:
   - intent: general_competition_info
   - action: utter_info_competition
+
+- rule: Activate form
+  steps:
+  - intent: ask_for_someone
+  - action: utter_find_someone
+  - action: attribute_form
+  - active_loop: attribute_form
+
+- rule: Submit form
+  condition:
+  - active_loop: attribute_form
+  steps:
+  - action: attribute_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: clear_action_attribute
+
+- rule: Happy Contest
+  steps:
+  - intent: happy_competition
+  - action: utter_happy_competition
+  - action: action_group_rank
+
+- rule: Submit request
+  steps:
+  - intent: request
+  - action: utter_help
     
 - rule: Say the scores of the competition
   steps:
   - intent: general_scores_info
   - action: utter_info_metrics
+
+- rule: Help sad
+  steps:
+  - intent: mood_unhappy
+  - action: utter_help

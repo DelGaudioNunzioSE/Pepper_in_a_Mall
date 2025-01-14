@@ -2,9 +2,10 @@
 
 # Lista di comandi da eseguire
 commands=(
-  "cd project_ws && source devel/setup.bash && roslaunch ros_audio_pkg speech_recognition.launch"
-  "cd project_ws && source devel/setup.bash && roslaunch rasa_ros dialogue.xml"
-  "cd chatbot && rasarun"
+  "source devel/setup.bash && roslaunch ros_audio_pkg speech_recognition.launch"
+  "source devel/setup.bash && roslaunch rasa_ros dialogue.xml"
+  "source devel/setup.bash && roslaunch pepper_nodes pepper_bringup.launch"
+  "source devel/setup.bash && roslaunch examples pepper_client.launch"
 )
 
 # Esegui ogni comando in un nuovo terminale

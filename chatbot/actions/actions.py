@@ -139,7 +139,7 @@ class ActionGroupsRanking(Action):
             # Conta il numero di righe (eccetto l'intestazione, se presente)
             dispatcher.utter_message(text=f"The ranking is: ")
             for i, row in enumerate(reader):
-                dispatcher.utter_message(text=f"Position:{i+1}, Group:{row[0]}")
+                dispatcher.utter_message(text=f"Position:{i+1}, Group:{row[0]}, AFS: {row[18]}")
                     
         return []
         
@@ -225,7 +225,7 @@ class ActionGroupRank(Action):
         
         
     def summary_group(self, row, i):
-        text=f"The group {row[0]} ended in position {i+1}. This is a summary for you. The components are:{row[1]} {row[2]}, {row[4]} {row[5]}, {row[7]} {row[8]}, {row[10]} {row[11]}, PFS:{row[13]} LFS:{row[14]} GFS:{row[15]} BFS:{row[16]} HFS:{row[17]} AFS: 0.{row[18]}"
+        text=f"The group {row[0]} ended in position {i+1}. This is a summary for you. The components are:{row[1]} {row[2]}, {row[4]} {row[5]}, {row[7]} {row[8]}, {row[10]} {row[11]}, the AFS is: {row[18]}"
         return text
     
     def detect_score(self, row, score):
