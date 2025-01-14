@@ -149,6 +149,16 @@ class ActionAttribute(Action):
                     filtered_people = [p for p in filtered_people if p.get('gender') == 'Male']
                 elif value == "female":
                     filtered_people = [p for p in filtered_people if p.get('gender') == 'Female']
+        shop_name=next(tracker.get_latest_entity_values('shops'), None)
+        if(shop_name is not None):
+            
+            print(str(shop_name))
+            if str(shop_name).upper() in traj_dict_inv:
+                shop = traj_dict_inv[str(shop_name).upper()]
+                filtered_people = [p for p in filtered_people if shop in p.get('trajectory')]
+                txt = f" in {shop_name}"
+            else:
+                txt = f" but the {shop_name} is not in this mall!"
         
         # Conta il numero di persone filtrate
         id_founded= None
@@ -259,17 +269,22 @@ class ActionGetTrajectories(Action):
                 messages.append(init_message)
                 len_message=f"there is {len(filtered_people)} match"
                 messages.append(len_message)
+                count = 0
                 for p in filtered_people:
                     last_seen_info = p.get('trajectory', [])
-                    last_seen_info = [traj_dict[p] for p in last_seen_info]
-                    if len(last_seen_info)>0:  
-                        
-                        message=f" Person with ID:{p.get('id')} should have passed close to store {last_seen_info[-1]}."
+                    last_seen_info = [traj_dict[loc] for loc in last_seen_info]
                     
+                    if len(last_seen_info) > 0:
+                        message = f"Person with ID:{p.get('id')} should have passed close to store {last_seen_info[-1]}."
                     else:
-                        
-                        message=f"I don't have location for Person with ID:{p.get('id')}, i'm sorry."
-                     # Append the generated message to the messages list
+                        message = f"I don't have location for Person with ID:{p.get('id')}, I'm sorry."
+                    
+                    # Append the generated message to the messages list
+                    messages.append(message)
+                    
+                    count += 1
+                    if count >= 3:  # Exit after processing 3 people
+                        break
                     messages.append(message)
                             
                         

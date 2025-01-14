@@ -6,6 +6,7 @@ from std_msgs.msg import String
 #from rasa_ros.srv import Text2Speech, Text2SpeechRequest, Text2SpeechResponse
 import os
 from rasa_ros.srv import Dialogue, DialogueResponse
+import string
 
 
 
@@ -40,8 +41,8 @@ class DialogueInterface:
             bot_answer = self.dialogue_service(message) #chiama il service dando in input il messaggio
             if(bot_answer.answer==""):
                 bot_answer.answer = "I didn't understand, can you repeat?"
-            
-            if(str(self.last_answer).upper()==str(message).upper()):
+            message_check= ''.join(char for char in message if char not in string.punctuation) # erase punctuation
+            if(str(self.last_answer).upper()==str(message_check).upper()):
                 rospy.loginfo('Pepper listened himself')
                 return
             self.set_text(bot_answer.answer) #restituisce la risposta e lo stampa sulla shell

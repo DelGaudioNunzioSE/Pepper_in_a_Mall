@@ -310,7 +310,8 @@ nlu:
     - There is a [women](attribute) are wearing [hats](attribute).
     - Please, tell me if a you see a [females](attribute) with [hats](attribute).
     - Can you see a [guys](attribute) have a [bag](attribute)?.
-    - We are Looking for prople with [hat](attribute) and a [bag](attribute).
+    - We are Looking for people with [hat](attribute) and a [bag](attribute).
+    - We are Looking for people with [hat](attribute) and a [bag](attribute) passed through [pepper's cafe](shops).
 
 
 - intent: ask_trajectory
