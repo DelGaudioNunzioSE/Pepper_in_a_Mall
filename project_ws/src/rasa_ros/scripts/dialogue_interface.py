@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import time
 import rospy
 from rasa_ros.srv import Dialogue, DialogueResponse
 from std_msgs.msg import String
@@ -38,20 +39,44 @@ class DialogueInterface:
         message = message.data
         try:
             print("[IN]:", message)
+
+            if (self.jaccard_similarity(message,self.last_answer) >0.8):
+                rospy.loginfo(f"Input: {message}", f"Last:{self.last_answer}")
+                rospy.loginfo("auto listened")
+                return
+
+            # Response
             bot_answer = self.dialogue_service(message) #chiama il service dando in input il messaggio
             if(bot_answer.answer==""):
                 bot_answer.answer = "I didn't understand, can you repeat?"
-            message_check= ''.join(char for char in message if char not in string.punctuation) # erase punctuation
-            if(str(self.last_answer).upper()==str(message_check).upper()):
-                rospy.loginfo('Pepper listened himself')
-                return
+
             self.set_text(bot_answer.answer) #restituisce la risposta e lo stampa sulla shell
             self.pub.publish(bot_answer.answer) #chiama il nodo tts e fa parlare
             self.last_answer=bot_answer.answer
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)
+
     
 
+    def jaccard_similarity(s1: str, s2: str) -> float:
+        """
+        Calcola la somiglianza di Jaccard tra due frasi s1 e s2.
+        
+        :param s1: Prima frase.
+        :param s2: Seconda frase.
+        :return: Punteggio di somiglianza Jaccard (tra 0 e 1).
+        """
+        # Converto le frasi in insiemi di parole
+        set_s1 = set(s1.lower().split())
+        set_s2 = set(s2.lower().split())
+
+        # Calcolo l'intersezione e l'unione
+        intersection = set_s1.intersection(set_s2)
+        union = set_s1.union(set_s2)
+
+        # Calcolo la somiglianza di Jaccard
+        similarity = len(intersection) / len(union)
+        return similarity
 
 
 def main():

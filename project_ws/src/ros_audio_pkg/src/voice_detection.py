@@ -6,6 +6,10 @@ import numpy as np
 import time
 import speech_recognition as sr
 
+HZ=16000 #44100 #16000
+CHUNK=1024 #2048# 1024
+threshold=70
+
 class VoiceDetectionNode:
     def __init__(self):
         # Initialize the ROS node
@@ -17,11 +21,11 @@ class VoiceDetectionNode:
         # Initialize recognizer for speech recognition
         self.recognizer = sr.Recognizer()
         self.recognizer.dynamic_energy_threshold = False
-        self.recognizer.energy_threshold=220 #to set for evry mic
+        self.recognizer.energy_threshold=threshold #to set for evry mic
         
 
         # Set up the microphone (device_index should be set correctly depending on the system)
-        self.microphone = sr.Microphone(device_index=4, sample_rate=44100, chunk_size=2048)
+        self.microphone = sr.Microphone(device_index=4, sample_rate=HZ, chunk_size=CHUNK)
 
 
         # Start listening in the background and call the callback when audio is detected

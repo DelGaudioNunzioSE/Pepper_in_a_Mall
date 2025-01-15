@@ -3,6 +3,7 @@ from utils import Session
 from pepper_nodes.srv import Led
 from optparse import OptionParser
 import rospy
+from std_msgs.msg import Int32
 
 '''
 This class implements a ROS node able to call the Led service of the robot
@@ -17,13 +18,13 @@ class LedNode:
         self.port = port
         self.session = Session(ip, port)
         self.lof = self.session.get_service("ALLeds")
-        self.DURATION=float(5) # <-- set duration
+        self.DURATION=float(2) # <-- set duration
      
     
 
 
     def randomEyes(self,msg):
-        rospy.loginfo("led will turn on for", self.DURATION) #DEBUG
+        rospy.loginfo("led will turn on") #DEBUG
         try:
             self.lof.randomEyes(self.DURATION)
         except:

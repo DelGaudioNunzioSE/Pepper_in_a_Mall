@@ -1,0 +1,8 @@
+<launch>
+        <node pkg="clients" type="animation_client.py" name="animation_client" output="screen"/>
+        <node pkg="clients" type="tts_client.py" name="tts_example" output="screen"/>
+        <node pkg="clients" type="led_client.py" name="led_client" output="screen"/>
+</launch>
+
+
+

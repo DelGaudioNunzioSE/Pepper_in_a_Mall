@@ -19,7 +19,7 @@ class AnimationNode:
         self.session = Session(ip, port)
         self.ar = self.session.get_service("ALAnimationPlayer")
         self.reset = self.session.get_service("ALRobotPosture")
-     
+        self.reset.goToPosture("Stand",1.0) # reset position
     '''
     Rececives a Animation message and call the ALAnimationPlayer service.
     The robot will run the animation
@@ -29,13 +29,11 @@ class AnimationNode:
         try:
             self.ar.runTag(msg.action)
             time.sleep(1) # to let the animation end
-            self.reset.goToPosture("Stand",1.0) # reset position
         except:
             self.session.reconnect()
             self.ar = self.session.get_service("ALAnimationPlayer")
             self.ar.runTag(msg.action)
             time.sleep(1)
-            self.reset.goToPosture("Stand",1.0)
         return "ACK"
     
     '''
