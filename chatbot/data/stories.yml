@@ -31,11 +31,22 @@ stories:
 
 - story: happy for competition
   steps: 
-  - intent: mood_great
+  - intent: mood_happy
   - action: utter_why
   - intent: happy_competition
   - action: utter_happy_competition
   - action: action_group_rank
+
+- story: happy for competition2
+  steps: 
+  - intent: mood_happy
+  - action: utter_why
+  - intent: happy_competition
+  - action: utter_happy_competition
+  - action: action_group_rank
+  - intent: affirm
+  - action: utter_happy 
+
 
 
 

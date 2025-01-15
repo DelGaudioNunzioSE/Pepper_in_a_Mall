@@ -73,6 +73,7 @@ class ActionCount(Action):
                 elif value == "female":
                     filtered_people = [p for p in filtered_people if p.get('gender') == 'Female']
         shop_name=next(tracker.get_latest_entity_values('shops'), None)
+        txt=" "
         if(shop_name is not None):
             
             print(str(shop_name))
@@ -284,6 +285,7 @@ class ActionGetTrajectories(Action):
                     
                     count += 1
                     if count >= 3:  # Exit after processing 3 people
+                        message=f"these are the first three ids matched"
                         break
                     messages.append(message)
                             

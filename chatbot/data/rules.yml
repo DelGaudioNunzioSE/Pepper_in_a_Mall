@@ -100,3 +100,13 @@ rules:
   steps:
   - intent: mood_unhappy
   - action: utter_help
+
+- rule: Thanks the bot
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- rule: Why are you happy
+  steps:
+  - intent: mood_happy
+  - action: utter_why

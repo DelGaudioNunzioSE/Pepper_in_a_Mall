@@ -120,6 +120,7 @@ nlu:
     - don't like that
     - no way
     - not really
+    - no, thanks
 
 - intent: mood_great
   examples: |
@@ -128,10 +129,6 @@ nlu:
     - amazing
     - feeling like a king
     - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
     - super stoked
     - extremely good
     - so so perfect
@@ -141,6 +138,8 @@ nlu:
     - thanks
     - I am fine
     - I'm fine
+    - thank you
+    - ah, thank you
     
 
 - intent: mood_unhappy
@@ -160,6 +159,18 @@ nlu:
     - so saad
     - so sad
     - I'm so worried
+
+- intent: mood_happy
+  examples: |
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - I am so happy
+    - i'm happy
+    - I'm so happy man
+    - i'm so happy pepper
+
 
 - intent: bot_challenge
   examples: |
@@ -192,19 +203,18 @@ nlu:
 
 - intent: info_group
   examples: |
-    - What are the components of group [one](group)?
-    - Tell me about the members of group [A](group)
-    - Can you describe the elements in group [B](group)?
-    - What is included in group [X](group)?
-    - Give me the details of the group [three](group)
-    - What makes up group [four](group)?
-    - Can you list the members of group [C](group)?
-    - What does group [two](group) consist of?
-    - Show me the contents of group [five](group)
-    - What are the parts of group [six](group)?
-    - Explain the composition of group [seven](group)
+    - What are the components of group [1](group)?
+    - Tell me about the members of group [11](group)
+    - Give me the details of the group [3](group)
+    - What makes up group [4](group)?
+    - Can you list the members of group [1](group)?
+    - What does group [2](group) consist of?
+    - Show me the contents of group [5](group)
+    - What are the parts of group [6](group)?
+    - Explain the composition of group [7](group)
     - What are the members of this group?
     - What about this group?
+    - WHo is in group [12](group)
 
 - intent: info_ranking
   examples: |
@@ -214,36 +224,34 @@ nlu:
     - How is the total ranking of the competition?
     - What is the overall position in the competition?
     - Where do the teams stand in the competition?
-    - What is the global standing in the competition?
     - What’s the current leaderboard of the competition?
     - Can you tell me the overall ranking of all teams in the competition?
     - How do all the groups rank in the competition?
-    - What is the global position in the competition leaderboard?
     - What’s the ranking of the teams in the competition right now?
     - How is the competition going overall?
     - What’s the total ranking of the teams?
     - Who won the competition?
-    - how many group surpass group 3
-    - how many group are over the group 14
+    - how many group surpass group [3](group)
+    - how many group are over the group [14](group)
 
 
 - intent: info_group_rank
   examples: |
-    - What is the rank of group [six](group)?
-    - What is the position of group [one](group)?
-    - How is the group [two](group) placed?
+    - What is the rank of group [6](group)?
+    - What is the position of group [1](group)?
+    - How is the group [2](group) placed?
     - And how it is placed?
     - And what is the position in the ladder?
-    - What is the rank of [six](group)?
-    - give me the position of [two](group)
-    - What is the [pfs](score) of group [one](group)?
+    - What is the rank of [6](group)?
+    - give me the position of [2](group)
+    - What is the [pfs](score) of group [1](group)?
     - What is the [afs](score) of this group?
     - How is the [afs](score)?
     - Give me the [bfs](score) score
     - Who is the [winner](rankings) of the competition?
     - Who is the [sixth](rankings) place?
     - Who is the [seventh](rankings) place?
-    - Who is the [eightth](rankings) place?
+    - Who is the [eighth](rankings) place?
     - Who is the [last](rankings) place?
     - What group is in the [last](rankings) position?
     - What group is in the [seventh](rankings) position?
@@ -252,6 +260,7 @@ nlu:
     - Can you tell me the rank of group [7](group)?
     - who are the members of the group in position [7](rankings)?
     - who are the members of the group in [seventh](rankings) position?
+    - who is the [third](rankings) group?
 
 - intent: general_competition_info
   examples: |
@@ -277,8 +286,6 @@ nlu:
     - Can you tell me what is the [pf](score) score?
 
 
-
-
 - intent: ask_count
   examples: |
     - How many person are there in the shopping mall?
@@ -291,11 +298,11 @@ nlu:
     - How many [women](attribute) are wearing [hats](attribute)?
     - Give me the count of [females](attribute) with [hats](attribute).
     - Tell me how many [guys](attribute) have a [bag](attribute).
-    - Count the number of [ladies](attribute) with [hats](attribute).
+    - Count the number of [female](attribute) with [hats](attribute).
     - How much people have a [hat](attribute) and a [bag](attribute)?
     - Count people wearing [hats](attribute).
     - how many person are there in the shopping mall?
-    - Number of people.
+    - Number of people in the shopping mall.
     - Number of [guys](attribute) have a [bag](attribute).
     - How many person are in the [pepper's cafe](shops)
     - How many person passed through [pepper's cafe](shops)
@@ -322,8 +329,8 @@ nlu:
     - i lost my [son](attribute), he has an [hat](attribute) and a bag
     - Give me the position of a [man](attribute)
     - position of a [man](attribute)
-    - trajectory of a [woman](attribute) with bag
-    - I lost my children? He is a [boy](attribute) with the [hat](attribute)
+    - trajectory of a [woman](attribute) with [bag](attribute)
+    - I lost my children. He is a [boy](attribute) with the [hat](attribute)
 
 
 - intent: ask_other_trajectory
@@ -334,11 +341,11 @@ nlu:
     - I can't see him, do you have orher position?
     - what trajectory did this person
     - Are there more location details available?
-    - trajectory of a [7](person)
+    - trajectory of person [7](person)
     - I want to know the trajectories of the person with ID [5](person)
     - Show me the path of the individual with ID [10](person)
-    - Can you tell me where the [2](person)) went?
-    - path of [11](person)
+    - Can you tell me where the ID [2](person)) went?
+    - path of person [11](person)
     - what is the position of id [8](person)
     - I can not see him. Did you see him in any other place?
 
@@ -347,27 +354,30 @@ nlu:
     - Tell me the details of the person with ID [5](person).
     - I want information about the person with ID [10](person).
     - Who is the person with ID [7](person)?
+    - Who is hte person [5](person)?
+    - Tell me about ID [6](person)
+    - ID [10](person)
 
 - intent: ask_for_someone
   examples: |
     - I am looking for someone in the mall
-    - i have lost my mum in the mall  
+    - i have lost my mum in the mall
+    - I can't find my son
+    - Where is my father?
+    - I am looking for my friends
+    - WHere are my friends?
+    - i don't know where my dad is
+    - i am curios to know something of the mall  
 
 - intent: happy_competition
   examples: |
     - I am so happy! We placed [first](rankings) at the competition!
     - We placed [second](rankings) at the competition!
+    - Our team got [third](rankings) place in the competition!
+    - I'm thrilled! We finished [first](rankings) in the competition!
+    - We came [second](rankings) in the competition
+    - Wow, we secured [first](rankings) in the competition!
 
-- intent: general_scores_info
-  examples: |
-    - What is the [pfs](score)?
-    - What is the pf(score) score?
-    - Whats does [afs](score) mean?
-    - what are the metrics of the competition?
-    - Explain me the metrics
-    - Explain me the [bfs](score)
-    - How the points are assigned?
-    - Can you tell me what is the [pfs](score)?
-    - Can you tell me what is the [pf](score) score?
+
 
 

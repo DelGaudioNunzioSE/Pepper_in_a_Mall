@@ -22,6 +22,7 @@ intents:
   - ask_for_someone
   - happy_competition
   - request
+  - mood_happy
   
 entities:
   - group
@@ -51,6 +52,42 @@ synonyms:
   hat:
     - hats
     - wearing a hat
+  mall:
+    - shopping center
+    - shopping mall
+    - shopping plaza
+    - retail complex
+    - commercial center
+  competition:
+    - contest
+    - rivalry
+    - competition event
+    - tournament
+    - championship
+    - match
+    - challenge
+    - race
+    - showdown
+    - battle
+  rank:
+    - position
+    - status
+    - tier
+    - level
+    - grade
+    - standing
+    - classification
+    - order
+    - rating
+    - hierarchy
+  shop:
+    - store
+    - boutique
+    - retail store
+    - shopfront
+    - marketplace
+    - outlet
+
 
 slots:
   group_number:
@@ -87,10 +124,8 @@ forms:
 responses:
   utter_greet:
   - text: "Hey! How are you?"
+  - text: "Hey"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
   - text: "Did that help you?"
@@ -103,7 +138,7 @@ responses:
 
   utter_happy:
   - text: "I am happy to help you!"
-  - text: "I am happy to help you. Ask me something if you need"
+  - text: "I am happy to help you. Ask me something else if you need"
   - text: "Nice, ask me more if you need!"
   
 
@@ -135,7 +170,7 @@ responses:
   - text: "Congratulation! Let me remember your interesting project!"
   
   utter_why:
-  - text: "Great! Tell me why if you want"
+  - text: "Great! It is about the competition? Tell me why if you want"
   
 actions:
   - action_groups_number
