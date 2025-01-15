@@ -5,9 +5,6 @@ import numpy as np
 import speech_recognition as sr
 from difflib import get_close_matches
 
-
-HZ=16000#44100
-
 class SpeechRecognitionNode:
     def __init__(self):
         # Initialize ROS node
@@ -21,7 +18,7 @@ class SpeechRecognitionNode:
         self.recognizer = sr.Recognizer()
 
         # Sample rate and channels
-        self.sample_rate = HZ
+        self.sample_rate = 44100
         self.channels = 2
 
         # Subscriber
@@ -32,7 +29,7 @@ class SpeechRecognitionNode:
 
 
 
-    def _word_replacement(self,testo, lista_parole=['person','man','woman','men','women','people','hat','hats','bag','bags','have','has','how', 'Pepper','what','where','at'],soglia=0.75):
+    def _word_replacement(self,testo, lista_parole=['person','man','woman','men','women','people','hat','hats','bag','bags','have','has','how', 'Pepper','what','where','at'],soglia=0.9):
         """
         Sostituisce le parole nella stringa con quelle più simili presenti in una lista, se la somiglianza supera una soglia.
 
@@ -45,29 +42,12 @@ class SpeechRecognitionNode:
             str: La stringa modificata con le sostituzioni effettuate.
         """
 
-
-        if "Annette" in testo:
-            testo = testo.replace("Annette", "an hat")
-        if "moon" in testo:
-            testo = testo.replace("moon", "mall")
-        if "back" in testo:
-            testo = testo.replace("back", "bag")
-        if "head" in testo:
-            testo = testo.replace("head", "hat")
-        if "meal" in testo:
-            testo = testo.replace("meal", "man")
-
-
         parole_nel_testo = testo.split()  # Dividi la stringa in parole
         parole_modificate = []
-
-
-
 
         for parola in parole_nel_testo:
             # Trova la parola più simile nella lista
             simili = get_close_matches(parola, lista_parole, n=1, cutoff=soglia)
-
             if simili:
                 # Sostituisci con la parola più simile
                 parole_modificate.append(simili[0])
@@ -77,11 +57,6 @@ class SpeechRecognitionNode:
 
         # Ricostruisci la stringa
         return " ".join(parole_modificate)
-
-    def sostituisci_parola(self,frase, parola_x, parola_y):
-        if parola_x in frase:
-            frase = frase.replace(parola_x, parola_y)
-        return frase
 
 
 
