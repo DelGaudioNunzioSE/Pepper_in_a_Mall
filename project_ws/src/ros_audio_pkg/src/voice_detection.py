@@ -6,9 +6,9 @@ import numpy as np
 import time
 import speech_recognition as sr
 
-HZ=44000 #44100 #16000
+HZ=44100 #44100 #16000
 CHUNK=2048 #2048# 1024
-threshold=500
+threshold=300
 
 class VoiceDetectionNode:
     def __init__(self):

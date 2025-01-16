@@ -53,6 +53,7 @@ nlu:
     - seventh
     - eight
     - eleventh
+    - fifth
 
 - intent: greet
   examples: |
@@ -103,13 +104,12 @@ nlu:
 
 - intent: affirm
   examples: |
-    - yes
     - y
     - indeed
     - of course
     - that sounds good
     - correct
-    - ok, thanks
+    - ok
 
 - intent: deny
   examples: |
@@ -140,6 +140,8 @@ nlu:
     - I'm fine
     - thank you
     - ah, thank you
+    - fine
+    - yes
     
 
 - intent: mood_unhappy
@@ -182,6 +184,10 @@ nlu:
     - what is your name
     - what's your name
     - are you pepper?
+    - what con you do?
+    - how can you help me?
+    - what u know?
+
 
     
 - intent: info_quantity
@@ -215,6 +221,8 @@ nlu:
     - What are the members of this group?
     - What about this group?
     - WHo is in group [12](group)
+    - Who are the components of the [third](rankings) group?
+    - WHo are the members of the [second](rankings) classified?
 
 - intent: info_ranking
   examples: |
@@ -233,6 +241,8 @@ nlu:
     - Who won the competition?
     - how many group surpass group [3](group)
     - how many group are over the group [14](group)
+    - what is the group with the higher afs?
+    - what is the group with the lower afs?
 
 
 - intent: info_group_rank
@@ -246,6 +256,7 @@ nlu:
     - give me the position of [2](group)
     - What is the [pfs](score) of group [1](group)?
     - What is the [afs](score) of this group?
+    - give me the [afs](score) of this group
     - How is the [afs](score)?
     - Give me the [bfs](score) score
     - Who is the [winner](rankings) of the competition?
@@ -289,6 +300,9 @@ nlu:
 - intent: ask_count
   examples: |
     - How many person are there in the shopping mall?
+    - How many person are there in the mall?
+    - what is the number of people in the mall?
+    - wait, what is the number of people in the shopping center?
     - And how many of them are [male](attribute)?
     - How many [male](attribute) have a [bag](attribute)?
     - Count the [female](attribute) with a [hat](attribute).
@@ -377,6 +391,13 @@ nlu:
     - I'm thrilled! We finished [first](rankings) in the competition!
     - We came [second](rankings) in the competition
     - Wow, we secured [first](rankings) in the competition!
+
+- intent: ask_comparison
+  examples: |
+    - Are there more people with [hat](attribute) or with a [bag](attribute)?
+    - Are there more [male](attribute) or people with a [hat](attribute)?
+    - there are more people in [pepper's cafe](shops) or in [unisa] store?
+    - there are more [female](attribute) or in [cognitive store](shops) store?
 
 
 

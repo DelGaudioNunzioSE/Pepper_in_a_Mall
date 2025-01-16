@@ -42,6 +42,22 @@ class SpeechRecognitionNode:
             str: La stringa modificata con le sostituzioni effettuate.
         """
 
+        # Word that usualy mistake 
+        if "Annette" in testo:
+            testo = testo.replace("Annette", "an hat")
+        if "moon" in testo:
+            testo = testo.replace("moon", "mall")
+        if "back" in testo:
+            testo = testo.replace("back", "bag")
+        if "head" in testo:
+            testo = testo.replace("head", "hat")
+        if "meal" in testo:
+            testo = testo.replace("meal", "man")
+        if "Peppa" in testo:
+            testo = testo.replace("Peppa", "Pepper")
+        if "net" in testo:
+            testo = testo.replace("net", "hat")
+
         parole_nel_testo = testo.split()  # Dividi la stringa in parole
         parole_modificate = []
 

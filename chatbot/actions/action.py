@@ -35,7 +35,7 @@ class ActionGroups(Action):
 
             # Restituisce il numero di righe come risposta
             num_lines = len(data["Group ID"])
-            dispatcher.utter_message(text=f"The groups are {num_lines}, with 3 or 4 people per group.") #-1 perchè il primo è l'header
+            dispatcher.utter_message(text=f"The groups are {num_lines}, with 3 or 4 people per group. Do you want know the global ranking or who is the winner?") #-1 perchè il primo è l'header
 
         except FileNotFoundError:
             dispatcher.utter_message(text=f"Sorry, the file {file_path} was not found.")
@@ -55,20 +55,66 @@ class CompositionGroups(Action):
         
         number_dict = {
             'one': 1,
+            'winner': 1,
+            'first':1,
+            '1': 1,
+
             'two': 2,
+            'second':2,
+            '2':2,
+
             'three': 3,
+            'third':3,
+            '3':3,
+
             'four': 4,
+            'fourth':4,
+            '4':4,
+
             'five': 5,
+            'fifth': 5,
+            '5':5,
+
             'six': 6,
+            'sixth':6,
+            '6':6,
+
             'seven': 7,
+            'seventh': 7,
+            '7':7,
+
             'eight': 8,
+            'eighth': 8,
+            '8':8,
+
             'nine': 9,
+            'nineth':9,
+            '9':9,
+
             'ten': 10,
+            'tenth':10,
+            '10':10,
+
             'eleven': 11,
+            'eleventh': 11,
+            '11':11,
+
             'twelve': 12,
+            'twelveth': 12,
+            '12':12,
+
             'thirteen': 13,
+            'thirteenth': 13,
+            '13':13,
+
             'fourteen': 14,
-            'fifteen': 15
+            'fourteenth':14,
+            '14':14,
+
+            'last': 15,
+            'fifteen': 15,
+            'fifteenth': 15,
+            '15':15
         }
 
         group_number = group_number.strip().lower() #toglie spazi o maiuscole
@@ -82,9 +128,10 @@ class CompositionGroups(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         group_number = tracker.get_slot('group_number')
+        ranking_or = next(tracker.get_latest_entity_values("rankings"), None)
 
-        if not group_number:
-            dispatcher.utter_message(text="Please provide the group number.")
+        if not group_number and not ranking:
+            dispatcher.utter_message(text="Do you want know something about the competition? Please provide the group number.")
             return []
 
         # Percorso del file CSV
@@ -94,7 +141,19 @@ class CompositionGroups(Action):
             with open(file_path, mode='r', encoding='utf-8') as file:
                 data = json.load(file)  # Legge l'intestazione del file CSV
 
-                
+                #Quali sono i componenti del gruppo ad un determinato rank
+                if ranking_or is not None:
+                    ranking = self.word_to_number(ranking_or)
+                    for group, rank in data["ranking_position"].items():
+                        grp = data["Group ID"][group]
+                        if int(ranking) == rank:
+                            members = data["group_members"][group] 
+                            dispatcher.utter_message(text = f"The components of group {grp}, which classified {str(ranking_or)}  are: " + ", ".join(members[:4]) + ".")
+                            return []                
+                    dispatcher.utter_message(text = f"The global ranking doesn't have this position. Ask me another position, i'll try to answer!")
+                    return [SlotSet("group_number", grp)]
+
+
                 group_number = int(group_number)
                 if group_number == None:
                     dispatcher.utter_message(text="Sorry, i didn't understand. Can you repeat please?") #specificare corretta posizione
@@ -105,8 +164,8 @@ class CompositionGroups(Action):
                 dispatcher.utter_message(text=f"Let me check...")
                 for group, members in data["group_members"].items():
                     grp = data["Group ID"][group]
-                    if grp == group_number: #perchè salta l'intestazione
-                        dispatcher.utter_message(text = f"The components of group {group_number} are: " + ", ".join(members[:4]) + ".")
+                    if grp == group_number: 
+                        dispatcher.utter_message(text = f"The components of group {group_number} are: " + ", ".join(members[:4]) + ". Ask me something about this group")
                         return []
 
                 # Se il numero del gruppo non è trovato
@@ -303,7 +362,11 @@ class ActionGroupRank(Action):
                         if sc == -1:
                             dispatcher.utter_message(f"I'm not sure if I understood, but let me check... {self.summary_group(row,i)}")
                             return []
-                        dispatcher.utter_message(text=f"The group:{group_number} {score} is {sc}")
+                        if sc > 0.8:
+                            txt = "An impressive result!"
+                        else:
+                            txt = "A good result."
+                        dispatcher.utter_message(text=f"The group:{group_number} {score} is {sc}. " + txt)
                         return []
                 dispatcher.utter_message(text=f"The group {group_number} wasn't in the competition")
                 return[]

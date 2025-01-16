@@ -10,7 +10,7 @@ from rasa_ros.srv import Dialogue, DialogueResponse
 import string
 
 
-
+DEFAULT_STRING="Hello! How can i help you?"
 class DialogueInterface:
     '''Class implementing a terminal i/o interface. 
 
@@ -21,12 +21,9 @@ class DialogueInterface:
     '''
 
     def __init__(self):
-        #self.tts = rospy.ServiceProxy("/tts", Text2Speech) #In questo modo accoppio il service e l'interfaccia
-        #decido di fare un publisher in modo che la risposta di rasa possa essere usata da 
-        #tutti i nodi di Pepper singolarmente, senza dover essere inseriti in questo package.
         self.dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
         self.pub = rospy.Publisher('bot_answer', String, queue_size=10)
-        self.last_answer=""
+        self.last_answer=DEFAULT_STRING
 
     def get_text(self):
         return input("[IN]:  ") 
@@ -39,7 +36,11 @@ class DialogueInterface:
         message = message.data
         try:
             print("[IN]:", message)
+            print("[BEFORE]:",self.last_answer)
 
+            if(self.jaccard_similarity(message,self.last_answer)>0.3):
+                rospy.loginfo("auto listened")
+                return
 
             # Response
             bot_answer = self.dialogue_service(message) #chiama il service dando in input il messaggio
@@ -48,12 +49,32 @@ class DialogueInterface:
 
             self.set_text(bot_answer.answer) #restituisce la risposta e lo stampa sulla shell
             self.pub.publish(bot_answer.answer) #chiama il nodo tts e fa parlare
+
             self.last_answer=bot_answer.answer
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)
 
     
+    def jaccard_similarity(self, s1: str, s2: str) -> float:
+        """
+        Calcola la somiglianza di Jaccard tra due frasi s1 e s2.
+        
+        :param s1: Prima frase.
+        :param s2: Seconda frase.
+        :return: Punteggio di somiglianza Jaccard (tra 0 e 1).
+        """
+        # Converto le frasi in insiemi di parole
+        set_s1 = set(s1.lower().split())
+        set_s2 = set(s2.lower().split())
 
+        # Calcolo l'intersezione e l'unione
+        intersection = set_s1.intersection(set_s2)
+        union = set_s1.union(set_s2)
+
+        # Calcolo la somiglianza di Jaccard
+        similarity = len(intersection) / len(union)
+        print(str(similarity))
+        return similarity
 
 
 def main():
@@ -61,8 +82,8 @@ def main():
     interface = DialogueInterface()
     rospy.init_node('writing')
     rospy.Subscriber("voice_txt", String, interface.callback)
-    interface.pub.publish("Hello! How can i help you?") #da sbloccare con Pepper
-    interface.set_text("Hello! How can i help you?")
+    interface.pub.publish(DEFAULT_STRING) #da sbloccare con Pepper
+    interface.set_text(DEFAULT_STRING)
     rospy.spin()
 
    

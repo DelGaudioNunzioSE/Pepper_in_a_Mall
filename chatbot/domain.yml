@@ -23,6 +23,7 @@ intents:
   - happy_competition
   - request
   - mood_happy
+  - ask_comparison
   
 entities:
   - group
@@ -148,9 +149,8 @@ responses:
   - text: "It was a pleasure, see you!"
 
   utter_iamabot:
-  - text: "I am Pepper, powered by Rasa."
-  - text: "I am Pepper, the referee of this competition!"
-  - text: "I am Pepper, the guardian of the mall."
+  - text: "I am Pepper, powered by Rasa, ask me something about the ranking of the Artificial Vision competition or a person in the mall to find."
+  - text: "I am Pepper, the guardian of the mall and the referee of this competition, ask me something about the ranking or a person to find in the mall."
   - text: "I am Pepper, ask me something about the mall or the artificial vision competition!"
 
   utter_info_competition:
@@ -182,7 +182,9 @@ actions:
   - action_get_trajectories
   - action_get_other_trajectories
   - action_get_person_info
+  - action_comparison
   - clear_action_attribute
+  
 
 session_config:
   session_expiration_time: 60

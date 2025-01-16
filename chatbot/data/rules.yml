@@ -110,3 +110,8 @@ rules:
   steps:
   - intent: mood_happy
   - action: utter_why
+
+- rule: quantity comparison
+  steps:
+  - intent: ask_comparison
+  - action: action_comparison

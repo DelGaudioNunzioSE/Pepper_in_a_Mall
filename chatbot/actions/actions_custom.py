@@ -80,16 +80,16 @@ class ActionCount(Action):
             if str(shop_name).upper() in traj_dict_inv:
                 shop = traj_dict_inv[str(shop_name).upper()]
                 filtered_people = [p for p in filtered_people if shop in p.get('trajectory')]
-                txt = f" in {shop_name}"
+                txt = f" in {shop_name}."
             else:
                 txt = f" but the {shop_name} is not in this mall!"
         
         # Conta il numero di persone filtrate
         count = len(filtered_people)
         if count > 0:
-            dispatcher.utter_message(text=f"There are {count} people in the mall matching your criteria" + txt)
+            dispatcher.utter_message(text=f"There are {count} people in the mall matching your criteria" + txt + "Do you want information about a specific ID?")
         else:
-            dispatcher.utter_message(text="No people match your criteria.")
+            dispatcher.utter_message(text="There are no people that match your criteria in the mall. Can i help ypu in some other way?")
         
         return [SlotSet("attribute", None)]
 
@@ -112,7 +112,7 @@ class ActionGetPersonInfo(Action):
             person = next((p for p in people if p['id'] == person_id), None)
 
             if person:
-                dispatcher.utter_message(text=f"Information about the person with {person_id}: {person}.")
+                dispatcher.utter_message(text=f"Information about the person with {person_id} id: {person}. You can ask me the positions of this ID to know the shops that he visited!")
             else:
                 dispatcher.utter_message(text=f"No person found with ID {person_id} in the mall.")
         else:
@@ -206,7 +206,7 @@ class ClearActionAttribute(Action):
         id_founded= None
         if len(filtered_people) == 1:
             id_founded=[p.get('id') for p in filtered_people]
-            dispatcher.utter_message(text=f"There is one person matching your criteria. And is : {id_founded}")
+            dispatcher.utter_message(text=f"There is one person matching your criteria. And is : {id_founded}. Ask me the positions of this ID if you want.")
         if len(filtered_people) > 0:
             count= len(filtered_people)
             id_founded=[p.get('id') for p in filtered_people]
@@ -315,7 +315,7 @@ class ActionGetOtherTrajectories(Action):
             data = json.load(file)
         people = data['people']
 
-        if(tracker.get_slot("person") is not None or tracker.get_latest_entity_values('person') is not None):
+        if(tracker.get_slot("person") is not None or next(tracker.get_latest_entity_values('person'), None) is not None):
             
             # Verifica se è stata trovata una persona corrispondente
             people = data['people']
@@ -345,3 +345,53 @@ class ActionGetOtherTrajectories(Action):
             )
 
         return []
+    
+class ActionComparison(Action):
+        def name(self) -> Text:
+            return "action_comparison"
+
+        def run(self, dispatcher: CollectingDispatcher,
+                tracker: Tracker,
+                domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            with open('./files/results.txt', 'r') as file:
+                data = json.load(file)
+            people = data['people']
+
+            # Recupera tutte le entità riconosciute
+            attributes = tracker.latest_message['entities']
+            
+            # Filtro iniziale che include tutte le persone
+            filtered_people = people
+            filtered_dict={}
+            filtered_list=[]
+            for attribute in attributes:
+                if attribute['entity'] == "attribute" or attribute["entity"] == "shops":
+                    value = attribute['value']
+                    if value == "hat":
+                        filtered_list = [p for p in filtered_people if p.get('hat') == 'Yes']
+                    elif value == "bag":
+                        filtered_list = [p for p in filtered_people if p.get('bag') == 'Yes']
+                    elif value == "male":
+                        filtered_list = [p for p in filtered_people if p.get('gender') == 'Male']
+                    elif value == "female":
+                        filtered_list = [p for p in filtered_people if p.get('gender') == 'Female']
+                    elif attribute["entity"] == "shops":
+                        if(value is not None):
+                            if str(value).upper() in traj_dict_inv:
+                                shop = traj_dict_inv[str(value).upper()]
+                                filtered_list = [p for p in filtered_people if shop in p.get('trajectory')]
+                    
+                    filtered_dict[value]=filtered_list
+            max= 0
+            max_attribute= " "
+            for key, value in filtered_dict.items():
+                if(len(value) > max):
+                    max= len(value)
+                    max_attribute=key
+
+            if max > 0:
+                dispatcher.utter_message(text=f"There are more {max_attribute}, they are {max}" )
+            else:
+                dispatcher.utter_message(text="Can you repeat please?.")
+            
+            return [SlotSet("attribute", None)]
