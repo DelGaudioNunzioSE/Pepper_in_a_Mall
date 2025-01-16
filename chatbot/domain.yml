@@ -33,6 +33,7 @@ entities:
   - attribute
   - trajectory_index
   - shops
+  - group_member
 
 synonyms:
   male:
@@ -124,8 +125,8 @@ forms:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-  - text: "Hey"
+  - text: "Hey! can i help you?"
+  - text: "Hey, how can i help you?"
 
 
   utter_did_that_help:
@@ -141,6 +142,9 @@ responses:
   - text: "I am happy to help you!"
   - text: "I am happy to help you. Ask me something else if you need"
   - text: "Nice, ask me more if you need!"
+
+  utter_deny:
+  - text: "Ok, ask me again if you need help with competition or the mall"
   
 
   utter_goodbye:

@@ -59,11 +59,10 @@ class ActionCount(Action):
         filtered_people = people
 
         # Applica i filtri in base alle entità
-
+        txt=""
         for attribute in attributes:
-            if attribute['entity'] == "attribute":
+            if attribute['entity'] == "attribute" or attribute["entity"] == "shops":
                 value = attribute['value']
-                
                 if value == "hat":
                     filtered_people = [p for p in filtered_people if p.get('hat') == 'Yes']
                 elif value == "bag":
@@ -72,24 +71,22 @@ class ActionCount(Action):
                     filtered_people = [p for p in filtered_people if p.get('gender') == 'Male']
                 elif value == "female":
                     filtered_people = [p for p in filtered_people if p.get('gender') == 'Female']
-        shop_name=next(tracker.get_latest_entity_values('shops'), None)
-        txt=" "
-        if(shop_name is not None):
-            
-            print(str(shop_name))
-            if str(shop_name).upper() in traj_dict_inv:
-                shop = traj_dict_inv[str(shop_name).upper()]
-                filtered_people = [p for p in filtered_people if shop in p.get('trajectory')]
-                txt = f" in {shop_name}."
-            else:
-                txt = f" but the {shop_name} is not in this mall!"
+                elif attribute["entity"] == "shops":
+                    if(value is not None):
+                        if str(value).upper() in traj_dict_inv:
+                            shop = traj_dict_inv[str(value).upper()]
+                            filtered_people = [p for p in filtered_people if shop in p.get('trajectory')]
+                        else:
+                            filtered_people=[]
+                            txt = f", I can't find the shops {str(value)}."
+                            break
         
         # Conta il numero di persone filtrate
         count = len(filtered_people)
         if count > 0:
-            dispatcher.utter_message(text=f"There are {count} people in the mall matching your criteria" + txt + "Do you want information about a specific ID?")
+            dispatcher.utter_message(text=f"There are {count} people in the mall matching your criteria" + txt + ".Do you want information about a specific ID?")
         else:
-            dispatcher.utter_message(text="There are no people that match your criteria in the mall. Can i help ypu in some other way?")
+            dispatcher.utter_message(text="There are no people that match your criteria in the mall" + txt +". Can i help you in some other way?")
         
         return [SlotSet("attribute", None)]
 
@@ -110,6 +107,9 @@ class ActionGetPersonInfo(Action):
         if person_id:
             person_id = int(person_id)
             person = next((p for p in people if p['id'] == person_id), None)
+            l = person.get('trajectory', [])
+            l = [traj_dict[p] for p in l]
+            person['trajectory'] = l
 
             if person:
                 dispatcher.utter_message(text=f"Information about the person with {person_id} id: {person}. You can ask me the positions of this ID to know the shops that he visited!")
@@ -139,9 +139,8 @@ class ActionAttribute(Action):
 
         # Applica i filtri in base alle entità
         for attribute in attributes:
-            if attribute['entity'] == "attribute":
+            if attribute['entity'] == "attribute" or attribute["entity"] == "shops":
                 value = attribute['value']
-                
                 if value == "hat":
                     filtered_people = [p for p in filtered_people if p.get('hat') == 'Yes']
                 elif value == "bag":
@@ -150,6 +149,11 @@ class ActionAttribute(Action):
                     filtered_people = [p for p in filtered_people if p.get('gender') == 'Male']
                 elif value == "female":
                     filtered_people = [p for p in filtered_people if p.get('gender') == 'Female']
+                elif attribute["entity"] == "shops":
+                    if(value is not None):
+                        if str(value).upper() in traj_dict_inv:
+                            shop = traj_dict_inv[str(value).upper()]
+                            filtered_people = [p for p in filtered_people if shop in p.get('trajectory')]
         shop_name=next(tracker.get_latest_entity_values('shops'), None)
         if(shop_name is not None):
             
@@ -191,17 +195,21 @@ class ClearActionAttribute(Action):
         
         # Applica i filtri in base alle entità
         for attribute in attributes:
-            if attribute['entity'] == "attribute":
+            if attribute['entity'] == "attribute" or attribute["entity"] == "shops":
                 value = attribute['value']
-                if len(filtered_people)>0:
-                    if value == "hat":
-                        filtered_people = [p for p in filtered_people if p.get('hat') == 'Yes']
-                    elif value == "bag":
-                        filtered_people = [p for p in filtered_people if p.get('bag') == 'Yes']
-                    elif value == "male":
-                        filtered_people = [p for p in filtered_people if p.get('gender') == 'Male']
-                    elif value == "female":
-                        filtered_people = [p for p in filtered_people if p.get('gender') == 'Female']
+                if value == "hat":
+                    filtered_people = [p for p in filtered_people if p.get('hat') == 'Yes']
+                elif value == "bag":
+                    filtered_people = [p for p in filtered_people if p.get('bag') == 'Yes']
+                elif value == "male":
+                    filtered_people = [p for p in filtered_people if p.get('gender') == 'Male']
+                elif value == "female":
+                    filtered_people = [p for p in filtered_people if p.get('gender') == 'Female']
+                elif attribute["entity"] == "shops":
+                    if(value is not None):
+                        if str(value).upper() in traj_dict_inv:
+                            shop = traj_dict_inv[str(value).upper()]
+                            filtered_people = [p for p in filtered_people if shop in p.get('trajectory')]
         # Conta il numero di persone filtrate
         id_founded= None
         if len(filtered_people) == 1:
@@ -237,7 +245,7 @@ class ActionGetTrajectories(Action):
         if(len(attributes)>0):
             filtered_people = people
             for attribute in attributes:
-                if attribute['entity'] == "attribute":
+                if attribute['entity'] == "attribute" or attribute["entity"] == "shops":
                     value = attribute['value']
                     if value == "hat":
                         filtered_people = [p for p in filtered_people if p.get('hat') == 'Yes']
@@ -247,6 +255,11 @@ class ActionGetTrajectories(Action):
                         filtered_people = [p for p in filtered_people if p.get('gender') == 'Male']
                     elif value == "female":
                         filtered_people = [p for p in filtered_people if p.get('gender') == 'Female']
+                    elif attribute["entity"] == "shops":
+                        if(value is not None):
+                            if str(value).upper() in traj_dict_inv:
+                                shop = traj_dict_inv[str(value).upper()]
+                                filtered_people = [p for p in filtered_people if shop in p.get('trajectory')]
 
             if len(filtered_people) == 1:
                 last_seen_info = filtered_people[0].get('trajectory', [])
@@ -268,7 +281,7 @@ class ActionGetTrajectories(Action):
                 messages = []
                 init_message="Let me check in my database..."
                 messages.append(init_message)
-                len_message=f"there is {len(filtered_people)} match"
+                len_message=f"there are {len(filtered_people)} match"
                 messages.append(len_message)
                 count = 0
                 for p in filtered_people:
@@ -286,11 +299,9 @@ class ActionGetTrajectories(Action):
                     count += 1
                     if count >= 3:  # Exit after processing 3 people
                         message=f"these are the first three ids matched"
+                        messages.append(message)
                         break
-                    messages.append(message)
-                            
                         
-               
 
                 # Join all messages into one string and send it
                 final_message = "\n".join(messages)  # Join all messages with newline for separation

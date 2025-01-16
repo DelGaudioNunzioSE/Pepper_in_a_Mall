@@ -223,6 +223,15 @@ nlu:
     - WHo is in group [12](group)
     - Who are the components of the [third](rankings) group?
     - WHo are the members of the [second](rankings) classified?
+    - What is the group of [Giovanni Casella](group_member)
+    - What is the group of [Nunzio Del Gaudio](group_member)
+    - In what group is [Carmine Aliberti](group_member)
+    - Group of [Christian De Angelis](group_member)
+    - Can you tell me [Rossi](group_member) group?
+    - [Verdi](group_member) is in which group?
+    - [Verdi](group_member) is a member of which group?
+    - Tell me [Attianese](group_member) group.
+    - Tell me the group of [Esposito](group_member).
 
 - intent: info_ranking
   examples: |
@@ -243,6 +252,7 @@ nlu:
     - how many group are over the group [14](group)
     - what is the group with the higher afs?
     - what is the group with the lower afs?
+    - what are these groups?
 
 
 - intent: info_group_rank
@@ -319,7 +329,11 @@ nlu:
     - Number of people in the shopping mall.
     - Number of [guys](attribute) have a [bag](attribute).
     - How many person are in the [pepper's cafe](shops)
-    - How many person passed through [pepper's cafe](shops)
+    - How many person passed through [unisa](shops)
+    - How many person passed through [lab](shops) shop
+    - person went trought [disney land](shops) shop
+    - How many person passed through [cognitive store](shops)
+    - How many person are in the [pinco pallino](shops)
 
 - intent: ask_attribute
   examples: |
@@ -376,6 +390,7 @@ nlu:
   examples: |
     - I am looking for someone in the mall
     - i have lost my mum in the mall
+    - i have lost a friend in the mall
     - I can't find my son
     - Where is my father?
     - I am looking for my friends

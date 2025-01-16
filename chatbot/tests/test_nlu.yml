@@ -1,0 +1,81 @@
+nlu:
+- intent: info_group
+  examples: |
+    - What are the components of group [one](group)?
+    - Give me the details of the group [three](group).
+
+- intent: info_ranking
+  examples: |
+    - What is the current overall ranking of the competition?
+    - Can you show me the overall competition ranking?
+
+- intent: info_group_rank
+  examples: |
+    - What is the rank of group [three](group)?
+    - What is the position of group [five](group)?
+    - How is group [two](group) placed?
+    - What is the [PFS](score) of group [one](group)?
+    - Give me the position of group [seven](group).
+    - What is the [AFS](score) of this group?
+    - Can you tell me the rank of group [6](group)?
+    - What group is in the [seventh](rankings) position?
+    - Who is in the [third](rankings) position?
+  
+
+- intent: general_competition_info
+  examples: |
+    - Tell me about the competition.
+    - Can you explain the competition to me?
+    - What is the purpose of the contest?
+    - I'd like to know more about the competition.
+
+- intent: general_scores_info
+  examples: |
+    - What are the metrics of the competition?
+    - Explain the scoring system.
+    - Can you tell me what is the [PFS](score)?
+    - What does [AFS](score) mean?
+
+- intent: ask_count
+  examples: |
+    - How many people are in the shopping mall?
+    - Count the [females](attribute) wearing [hats](attribute).
+    - How many [males](attribute) are carrying [bags](attribute)?
+    - What is the number of people with a [hat](attribute)?
+
+- intent: ask_attribute
+  examples: |
+    - Who are the [males](attribute) with [bags](attribute)?
+    - I'm looking for a [female](attribute) wearing a [hat](attribute).
+    - Are there any [people](attribute) wearing a [hat](attribute) and carrying a [bag](attribute)?
+
+- intent: ask_trajectory
+  examples: |
+    - Where did the [male](attribute) with a [bag](attribute) go?
+    - Show me the path of the [woman](attribute) carrying a [bag](attribute).
+    - I lost my [son](attribute), he had a [hat](attribute).
+
+- intent: ask_other_trajectory
+  examples: |
+    - Do you have additional location data?
+    - Are there more positions available?
+    - Show me the trajectory of person ID [10](person).
+    - Where did person ID [8](person) go?
+
+- intent: ask_person_info
+  examples: |
+    - Tell me the details of person ID [5](person).
+    - I need information about person ID [10](person).
+    - Who is person ID [7](person)?
+
+- intent: ask_for_someone
+  examples: |
+    - I am looking for someone in the mall.
+    - I lost my mum in the mall.
+    - Can you help me find someone?
+
+- intent: happy_competition
+  examples: |
+    - I am so happy! We placed [first](rankings) in the competition!
+    - We finished [second](rankings) in the competition!
+    - My team won, and I’m thrilled!
