@@ -4,17 +4,13 @@
   <param name="nao_ip" type="string" value="$(arg nao_ip)"/>
   <param name="nao_port" type="string" value="$(arg nao_port)"/>
 
-  <node pkg="pepper_nodes" type="wakeup_node.py" name="wakeup_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="pepper_nodes" type="head_motion_node.py" name="head_motion_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="pepper_nodes" type="tablet_node.py" name="tablet_node" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="pepper_nodes" type="text2speech_node.py" name="text2speech" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="pepper_nodes" type="image_input_node.py" name="image_input" required="false" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="pepper_nodes" type="animation_server.py" name="animation_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="pepper_nodes" type="auto_track_server.py" name="auto_track_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
-  <node pkg="pepper_nodes" type="led_server.py" name="led_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
   <node pkg="clients" type="animation_client.py" name="animation_client" output="screen"/>
   <node pkg="clients" type="tts_client.py" name="tts_example" output="screen"/>
   <node pkg="clients" type="led_client.py" name="led_client" output="screen"/>
+  <node pkg="pepper_nodes" type="text2speech_node.py" name="text2speech" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
+  <node pkg="pepper_nodes" type="animation_server.py" name="animation_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
+  <node pkg="pepper_nodes" type="auto_track_server.py" name="auto_track_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
+  <node pkg="pepper_nodes" type="led_server.py" name="led_server" required="true" args="--ip=$(arg nao_ip) --port=$(arg nao_port)" output="screen" />
   <arg name="node_start_delay" default="100.0" />  
   <node pkg="rasa_ros" name="rasa_action" type="rasa_action.sh" output="screen"/>
   <node pkg="rasa_ros" name="rasa_server" type="rasa_server.sh" output="screen"/> 

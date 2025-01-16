@@ -1,14 +1,12 @@
 # Pepper as a Social Robot 🗣️
 
 ## About this Repository
-https://drive.google.com/file/d/19wCRNv_ymXgmMfKGK9Tvin_8Sar2cbpH/view?usp=sharing
+- [Rules] https://drive.google.com/file/d/19wCRNv_ymXgmMfKGK9Tvin_8Sar2cbpH/view?usp=sharing
 
 
 ## Documentation
-- https://miro.com/welcomeonboard/UGMxOGxGc2tTM2pNTGxyR0pwM2lvbWdUK09rOVVuWDV1RHJzdXgvOW1LUVl0U3IwQ2RJTHN4U2k3eVc0T3F1UCtWM2xzdFdKTVRFc0NuQWt1TDZKbjI5Sk1nQkVxWktORUxORlIydW44aUtYNTkyeVczcFZ0ZzVIbDJDaWdRM0chZQ==?share_link_id=50079255558
 - [Presentation](https://docs.google.com/presentation/d/1zyz_xxsRhIuO-7U-GgTZRs0cZkHIISAh/edit?usp=sharing&ouid=114610994690035412569&rtpof=true&sd=true)
-- https://www.overleaf.com/6169424213fhykbqjpvwqw#0c1b76
-
+- [Video]()
 
 
 
@@ -26,20 +24,19 @@ https://drive.google.com/file/d/19wCRNv_ymXgmMfKGK9Tvin_8Sar2cbpH/view?usp=shari
 3. catkin build
 4. source devel/setup.bash
 
-### Re-build
-1. catkin build
-2. source devel/setup.bash
+### Then run the 4 package in different terminals
+- source devel/setup.bash && roslaunch pepper_nodes pepper_bringup.launch (nao_ip:=x.x.x.x)
+- source devel/setup.bash && roslaunch clients pepper_client.launch
+- source devel/setup.bash && roslaunch rasa_ros dialogue.xml
+- source devel/setup.bash && roslaunch ros_audio_pkg speech_recognition.launch
 
-### Run nodes
-1. roscore
-2. rosrun package_name node_name
-
-### Run nodes on Pepper
-1. connect on the same pepper's net
-2. roslaunch pepper_nodes pepper_bringup.launch nao_ip:=x.x.x.x
+The first is the package about connection to pepper and launch of the server
+The second one is about the client of the servers
+The third one is abaout RASA nodes and RASA server
+The last one is for the input audio 
 
 
-## HOW TO INSTALL
+## HOW TO INSTALL _________________________________________
 ### Preparation
 1. sudo apt update
 2. sudo apt install python3-pip
