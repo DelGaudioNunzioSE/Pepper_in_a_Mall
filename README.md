@@ -1,15 +1,5 @@
 # Pepper as a Social Robot 🗣️
 
-## About this Repository
-- [Rules] https://drive.google.com/file/d/19wCRNv_ymXgmMfKGK9Tvin_8Sar2cbpH/view?usp=sharing
-
-
-## Documentation
-- [Presentation](https://docs.google.com/presentation/d/1zyz_xxsRhIuO-7U-GgTZRs0cZkHIISAh/edit?usp=sharing&ouid=114610994690035412569&rtpof=true&sd=true)
-- [Video]()
-
-
-
 # HOW TO 🧑‍🏫
 
 ## HOW TO RUN
@@ -88,35 +78,5 @@ The last one is for the input audio
 5. cd $HOME/catkin_ws
 6. catkin build
 7. source devel/setup.bash
-
-
-
-## How to visualize images on Pepper's tablet
-
-### Configure webserver on your PC
-1. Install Flask:
-    - `python3 -m pip install Flask`
-2. Configure the webserver:
-    - [Flask Tutorial](https://flask.palletsprojects.com/en/stable/tutorial/layout/)
-3. Load the webview provided in the lesson
-
-### Send images to webview
-
-1. Start the tablet node such as in [https://github.com/gdesimone97/cogrob_pepper_nodes/blob/main/src/pepper_nodes/src/tablet_node.py](https://github.com/gdesimone97/cogrob_pepper_nodes/blob/main/src/pepper_nodes/src/tablet_node.py)
-2. Load the webview on Pepper tablet using the `load_url` method.
-    - Example: [https://github.com/gdesimone97/cogrob_pepper_nodes/blob/main/src/examples/src/tablet_example.py](https://github.com/gdesimone97/cogrob_pepper_nodes/blob/main/src/examples/src/tablet_example.py)
-    - Pay attention you have to send a request to your webserver in the format: `http://<WEB_SERVER_IP:<WEB_SERVER_PORT>`
-3. Call the `execute_js` ROS service sending the image in base64
-    - Example code:
-
-```python
-def show_image(self, img: np.ndarray):
-        # Get the numpy array image as input
-        video_script = 'document.getElementById("rtv").src="data:image/png;base64, {}";'
-        image_base64 = base64.b64encode(img).decode('UTF-8') # From numpy array to base64 string
-        script = video_script.format(image_base64)
-        ## <Call the execute_js ROS Service sending the script varible defined above>
-```
-
 
 ![Alt text](https://corporate-internal-prod.aldebaran.com/themes/custom/softbank/images/360/pepper.png)
