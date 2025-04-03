@@ -1,4 +1,9 @@
 # Pepper as a Social Robot 🗣️
+In this project, we programmed Pepper, the humanoid robot, to serve as a social companion capable of interacting naturally with users. Our
+main objective was to enable Pepper to respond dynamically in two specific domains: shopping centers and customer PAR information, which
+it could retrieve from a local database.
+
+We used the ROS framework in order to manage the robot and RASA for the TOD module.
 
 # HOW TO 🧑‍🏫
 
